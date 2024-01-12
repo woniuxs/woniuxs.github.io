@@ -1,10 +1,10 @@
 {
-  "spider": "./fty.jar;md5;5aee1ff968a3dc5cbbf225399e9441e9",
+  "spider": "./fty.jar;md5;4ceefaa8f9f80595929da0af9159645b",
   "wallpaper": "http://饭太硬.top/深色壁纸/api.php",
   "sites": [
     {
       "key": "豆豆",
-      "name": "🌕蜗牛影视🐌",
+      "name": "🌕公众号【神秘的哥哥们】",
       "type": 3,
       "api": "csp_DouDou",
       "searchable": 0,
@@ -19,11 +19,11 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://127.0.0.1:9978/file/tvfan/token.txt+4k|auto|fhd$$$https://wogg.xyz/$$$弹"
+      "ext": "http://127.0.0.1:9978/file/tvfan/token.txt+4k|auto|fhd$$$https://www.wogg.xyz/$$$弹"
     },
     {
       "key": "YGP",
-      "name": "🚀叨观荐影┃速递",
+      "name": "🚀叨观荐影┃新片",
       "type": 3,
       "api": "csp_YGP",
       "searchable": 0,
@@ -62,6 +62,25 @@
       "changeable": 1
     },
     {
+      "key": "九六",
+      "name": "🎀九六┃直连",
+      "type": 3,
+      "api": "csp_Cs1369",
+      "playerType": 2,
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1
+    },
+    {
+      "key": "77",
+      "name": "👒七七┃App",
+      "type": 3,
+      "api": "csp_Kunyu77",
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1
+    },
+    {
       "key": "小柚",
       "name": "🍊小柚┃App",
       "type": 3,
@@ -80,25 +99,6 @@
       "quickSearch": 1,
       "changeable": 1,
       "ext": "FbjKZ1gO+9u81wMIxzHg+7x1Oep4CIFuZAlCy8a4qCgjGLacnxDo6wiBr66jP3X8J2mRx31u1XgkTTVrENVjfhQKUN2Yi12XNWQSlmVZxLtiSaSiZG0xf1Hw"
-    },
-    {
-      "key": "77",
-      "name": "👒七七┃App",
-      "type": 3,
-      "api": "csp_Kunyu77",
-      "searchable": 1,
-      "quickSearch": 1,
-      "changeable": 1
-    },
-    {
-      "key": "九六",
-      "name": "🎀九六┃直连",
-      "type": 3,
-      "api": "csp_Cs1369",
-      "playerType": 2,
-      "searchable": 1,
-      "quickSearch": 1,
-      "changeable": 1
     },
     {
       "key": "嘿嘿",
