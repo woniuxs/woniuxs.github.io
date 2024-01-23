@@ -1,0 +1,631 @@
+
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="applicable-device" content="pc">
+    <title>咪咕鱼网址导航 - 简洁清新的上网导航</title>
+    <meta name="keywords" content="网址导航,上网导航,简洁网址,网址大全,咪咕鱼导航,上网主页,咪咕鱼,看板娘希希,希希" />
+    <meta name="description" content="咪咕鱼网址导航是一个简洁、清新的上网导航网站。在这里你可以自定义网址、选择最适合你的背景和布局，帮助你快速的上网冲浪，找到想要的网站和网址。" />
+    <link rel="icon" href="https://www.miguyu.com/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://www.miguyu.com/favicon.ico" type="image/x-icon">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="https://www.miguyu.com/mini144.png">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="https://www.miguyu.com/mini114.png">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="https://www.miguyu.com/mini72.png">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://www.miguyu.com/mini57.png">
+    <link rel="stylesheet" href="https://cdn.miguyu.com/statics/fontgreat/css/all.min.css" type="text/css">
+
+
+
+        <link rel="stylesheet" href="https://cdn.miguyu.com/statics/css/cust/astyle2312bcd.min.css?v=0.2.5.4.0" type="text/css">
+    <link rel="stylesheet" href="https://cdn.miguyu.com/statics/css/cust/bstyle2312hot.min.css?v=0.2.5.4.0" type="text/css">
+
+    
+        <style text="text/css">
+        #frm-log-wx{display: none;}
+    </style>
+        <script type="text/javascript" rel="preload" src="https://cdn.miguyu.com/statics/js/jquery.min.js"></script>
+    <script type="text/javascript" rel="preload" src="https://cdn.miguyu.com/statics/js/vue.min.js"></script>
+    <script type="text/javascript" rel="preload" src="https://cdn.miguyu.com/statics/js/vue-resource.min.js"></script>
+</head>
+<body>
+    <script>
+        var isG = 1;
+        var ranTheme=[];
+        var cur_h_color = '#F2F2F2';
+        var cur_ratio = 0.3;
+        var uconfs=[];
+        var ubackconfs=[];
+        var meTheme=[];
+        var netTheme=[];
+        var moTheme=[];
+        var curOutTime = 300;
+        var cur_max_his = 10;
+        var cur_opacity = 0.8;
+        var dddd=0;
+        var show_logo = 0;
+        var mix_syno = 0;
+        var time_style_show = 0;
+        var s_num_up=61;
+        var isExtTabs = 0;
+        var s_stat_tj=0;
+        var s_devi_is=1;
+    </script>
+    <div id="main">
+        <div class="bg-mask" :style="backCssChange(0)" v-cloak></div>
+        <div class="nav-weather" v-cloak v-show="showWeather===1" ><div id="he-plugin-simple"></div></div>
+        <div class="my-ui-nav-top-dis" :style="{'height': navTop+'px'}" v-cloak></div>
+        <div class="my-ui-simple-mode" v-cloak></div>
+        <div id="top-nav"><div class="my-logo" v-cloak @click="timeCkEffect"><img v-show="showLogo===0" src="https://www.miguyu.com/mylogo.png" />
+            <div class="time-caption" v-show="showLogo===2 || showLogo===3"><div class="my-time" v-show="showLogo===2 || showLogo===3"></div><div class="my-calendar" v-show="showLogo===3"></div></div></div></div>
+        <div id="search" v-show="bHideSrchBox==0" v-cloak>
+            <div id="search-box">
+                <span class="search-icon"></span>
+                <input type="text" id="s-txt" class="s-key" placeholder="" autocomplete="off" /><span class="s-del" title="清空" onclick="delSearchText()"><i class="fa fa-times"></i></span>
+                <button class="s-btn" id="search-btn"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="box search-hot-text" id="box" style="display: none">
+                <div class="space-line"></div>
+                <ul></ul>
+            </div>
+            <div class="search-engine">
+                <ul class="search-engine-list">
+                </ul>
+            </div>
+        </div>
+
+        <div id="app" v-show="bHideNav==0" v-cloak>
+            <div id="catNavBar" class="sortNav" v-show="cShow > 1" v-cloak>
+                <div class="itemCat" v-for="(item,index) in catLists" :style="changeCatStyle(index==show_index)" v-show="item.ishide==0"
+                    @mouseenter="switchShowIndex(item.type)" @mouseleave="cancelSwi()">
+                    {{item.catname}}
+                </div>
+            </div>
+            <div :style="{'margin-top':(cShow>1? 0:'56px')}" v-cloak></div>
+            <div class="siteList" v-show="showType==0" :style="iconSiteWidthChange(0)" v-cloak>
+                <ul v-for="(item,index) in siteLists" v-show="index==show_index && catLists[index].ishide==0">
+                    <li v-for="(item1,index1) in item.sites" class="item" :style="iconCssChange(0)">
+                        <a :target="bUrlOpenMode?'_blank': '_self'" :href="item1.url" class="custom-hover" :style="changeListStyle(index1)" @mouseover="itemHover(index1)" @mouseout="delItemHover(index1)">
+                            <img :src="item1.logo">
+                            <span>{{item1.title}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="chroList" v-show="showType==1" :style="iconSiteWidthChange(1)" v-cloak>
+                <div class="siteStyle" v-for="(item,index) in siteLists" v-show="index==show_index && catLists[index].ishide==0">
+                    <div class="chroItems" :style="iconCssChange(1)" v-for="(item1,index1) in item.sites"><a :href="item1.url" :target="bUrlOpenMode?'_blank': '_self'"><div class="grid-item" :style="gridItemChange(1)"><img :src="item1.logo" :style="imgSizeChange(1)"></div><div class="grid-title"  :style="titSizeChange(1)">{{bHideIcoName==0 ? item1.title : '&nbsp;'}}</div></a></div>
+                </div>
+            </div>
+            <div class="squaList" v-show="showType==2" :style="iconSiteWidthChange(2)" v-cloak>
+                <div class="siteSquaStyle" v-for="(item,index) in siteLists" v-show="index==show_index && catLists[index].ishide==0">
+                    <div class="squaItems" :style="iconCssChange(2)" v-for="(item1,index1) in item.sites"><a :href="item1.url" :target="bUrlOpenMode?'_blank': '_self'"><div class="grid3-item" :style="gridItemChange(2)"><img :src="item1.logo" :style="imgSizeChange(2)"></div><div class="grid3-title" :style="titSizeChange(2)">{{bHideIcoName==0 ? item1.title : '&nbsp;'}}</div></a></div>
+                </div>
+            </div>
+            <div class="icobList" v-show="showType==3" :style="iconSiteWidthChange(3)" v-cloak>
+                <div class="siteIcobStyle" v-for="(item,index) in siteLists" v-show="index==show_index && catLists[index].ishide==0">
+                    <div class="icobItems" :style="iconCssChange(3)" v-for="(item1,index1) in item.sites"><a :href="item1.url" :target="bUrlOpenMode?'_blank': '_self'"><div class="grid5-item" :style="gridItemChange(3)"><img :src="item1.logo" :style="imgSizeChange(3)"></div><div class="grid5-title" :style="titSizeChange(3)">{{bHideIcoName==0 ? item1.title : '&nbsp;'}}</div></a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="settingModal" id="frm-set-conf" v-show="isSettingModelShow" v-cloak>
+            <div class="conf-panel-all">
+                <div class="conf-panel-left">
+                    <div class="conf-item-caption"></div>
+                    <ul>
+                        <li :class="{active: confItemIndex==0}" @click="selectConfItem(0)"><i>基础</i></li>
+                        <li :class="{active: confItemIndex==1}" @click="selectConfItem(1)"><i>布局</i></li>
+                        <li :class="{active: confItemIndex==2}" @click="selectConfItem(2)"><i>背景</i></li>
+                        <li :class="{active: confItemIndex==3}" @click="selectConfItem(3)"><i>搜索</i></li>
+                        <li :class="{active: confItemIndex==4}" @click="selectConfItem(4)"><i>关于</i></li>
+                        <li :class="{active: confItemIndex==5}" @click="selectConfItem(5)"><i>帮助</i></li>
+                        <li :class="{active: confItemIndex==6}" @click="selectConfItem(6)"><i>合作</i></li>
+                    </ul>
+                </div>
+
+                <div class="conf-panel-right">
+                    <div class="conf-frame-rt" v-show="confItemIndex == 0">
+                        <div class="set-caption"><h2>基础设置</h2><i class="far fa-times-circle" @click="cancelSetConf" title="关闭"></i></div>
+                        <div class="set-conf-list">
+                            <p><span class="set-rt"><input type="radio" value="0" @change="selectLay" v-model="showTypeB"> 文字<input type="radio" value="1" @change="selectLay" v-model="showTypeB"> 圆形
+                                <input type="radio" value="2" @change="selectLay" v-model="showTypeB"> 圆角矩形 <input type="radio" value="3" @change="selectLay" v-model="showTypeB"> 图标</span>图标形状</p>
+                            <p><span class="set-rt"><input type="radio" value="0" @change="selectLogo" v-model="showLogoB"> 默认<input type="radio" value="1" @change="selectLogo" v-model="showLogoB"> 隐藏 <input type="radio" value="2" @change="selectLogo" v-model="showLogoB"> 时间<input type="radio" value="3" @change="selectLogo" v-model="showLogoB"> 日期</span>Logo设置</p>
+                            <p><span class="set-rt"><input type="radio" value="0" @change="selectTimeCkType" v-model="showTimeCkTypeB"> 无<input type="radio" value="1" @change="selectTimeCkType" v-model="showTimeCkTypeB"> 导航区隐藏/显示</span>点击Logo效果(建议关闭)</p>
+                            <p><span class="set-rt"><input type="radio" value="0" @change="selectTimeStyle" v-model="showTimeStyleB"> 时分<input type="radio" value="1" @change="selectTimeStyle" v-model="showTimeStyleB"> 时分秒</span>时间显示</p>
+                            <p><span class="set-rt"><input type="radio" value="0" @change="selectHot" v-model="showHotB"> 默认<input type="radio" value="1" @change="selectHot" v-model="showHotB"> 隐藏</span>热榜设置</p>
+                            <p><span class="set-rt switch">
+                                <input id="urlOpenMode" type="checkbox" hidden="hidden" :checked="bUrlOpenMode==1" @click="swUrlOpenMode"/>
+                                <label for="urlOpenMode"></label></span>新标签页打开网址（建议打开）</p>
+                            <p><span class="set-rt switch">
+                                <input id="switchWeather" type="checkbox" hidden="hidden" :checked="showWeather==1" @click="swWeather"/>
+                                <label for="switchWeather"></label></span>显示天气</p>
+                            <p><span class="set-rt switch">
+                                <input id="switchHistory" type="checkbox" hidden="hidden" :checked="bHistory==1" @click="swHistory"/>
+                                <label for="switchHistory"></label></span>是否自动记录搜索历史</p>
+                            
+                        </div>
+                        <div class="custom-btn"><input type="button" value="关闭" @click="cancelSetConf"></div>
+                    </div>
+
+                    <div class="conf-frame-rt" v-show="confItemIndex == 1">
+                        <div class="set-caption"><h2>布局设置</h2><i class="far fa-times-circle" @click="cancelSetConf" title="关闭"></i></div>
+                        <div class="set-conf-list">
+                            <p><span class="set-rt"><input type="radio" value="0" @change="selectLay" v-model="showTypeB"> 文字<input type="radio" value="1" @change="selectLay" v-model="showTypeB"> 圆形
+                                <input type="radio" value="2" @change="selectLay" v-model="showTypeB"> 圆角矩形 <input type="radio" value="3" @change="selectLay" v-model="showTypeB"> 图标</span>图标形状</p>
+                            <p><span class="set-rt"><span class="set-ys-rect" @click="getYSLayout(0)"> 默认预设 </span><span class="set-ys-rect"  @click="getYSLayout(1)"> 宽屏预设 </span><span class="set-ys-rect"  @click="getYSLayout(2)"> 居中预设 </span></span>导航预设值</p>
+                            <p><span class="set-rt switch">
+                                <input id="switchHideSrchBox" type="checkbox" hidden="hidden" :checked="bHideSrchBox==1" @click="swHideSrchBox"/>
+                                <label for="switchHideSrchBox"></label></span>是否隐藏搜索框(建议关闭)</p>
+                            <p><span class="set-rt switch">
+                                <input id="switchHideNav" type="checkbox" hidden="hidden" :checked="bHideNav==1" @click="swHideNav"/>
+                                <label for="switchHideNav"></label></span>是否隐藏导航区(建议关闭)</p>
+                            <p><span class="set-rt switch">
+                                <input id="switchHideIcoName" type="checkbox" hidden="hidden" :checked="bHideIcoName==1" @click="swHideIcoName"/>
+                                <label for="switchHideIcoName"></label></span>是否隐藏图标名称(文字式无效)</p>
+                            <p><span class="set-rt"><output>{{icoSize}}</output></span><span class="set-inline">图标大小[文字无效](0)</span><input type="range" min="0" max="16" step="1" :value="icoSize" id="my-ico-size" @input="updateVueUI('my-ico-size')"></p>
+                            <p><span class="set-rt"><output>{{navTop}}</output>px</span><span class="set-inline">搜索框位置(0px)</span><input type="range" min="0" max="240" step="1" :value="navTop" id="my-nav-top" @input="updateVueUI('my-nav-top')"></p>
+                            <p><span class="set-rt"><output>{{siteWidth}}</output>px</span><span class="set-inline">导航区宽度(1200px)</span><input type="range" min="1020" max="1900" step="10" :value="siteWidth" id="my-site-width" @input="updateVueUI('my-site-width')"></p>
+                            <p><span class="set-rt"><output>{{siteColDis}}</output>px</span><span class="set-inline">图标列间距(115px)</span><input type="range" min="72" max="200" step="1" :value="siteColDis" id="my-site-col-dis" @input="updateVueUI('my-site-col-dis')"></p>
+                            <p><span class="set-rt"><output>{{siteRowDis}}</output>px</span><span class="set-inline">图标行间距(10px)</span><input type="range" min="0" max="40" step="1" :value="siteRowDis" id="my-site-row-dis" @input="updateVueUI('my-site-row-dis')"></p>
+                                                    </div>
+
+                        <div class="custom-btn"><input type="button" value="保存到本地" onclick="saveSetConfNew3()">&nbsp;&nbsp;&nbsp;<input
+                            type="button" value="关闭" @click="cancelSetConf"></div>
+                    </div>
+                    <div class="conf-frame-rt" v-show="confItemIndex == 2">
+                        <div class="set-caption"><h2>背景设置</h2><i class="far fa-times-circle" @click="cancelSetConf" title="关闭"></i></div>
+                        <div class="set-conf-list">
+                            <p>背景</p>
+                            <div class="bk-img-top">
+                                <div class="bk-demo-img-fr">
+                                    <div class="bk-demo-img"><img :src="bkDemoThumb"/>
+                                    </div>
+                                    <div class="bk-img-btn">
+                                        <button @click="showModelTheme()">更换背景</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <p><span class="set-rt"><input type="radio" value="0" @change="selMaskType" v-model="maskTypeB"> 白色<input type="radio" value="1" @change="selMaskType" v-model="maskTypeB"> 黑色
+                                <input type="radio" value="2" @change="selMaskType" v-model="maskTypeB"> 红色 <input type="radio" value="3" @change="selMaskType" v-model="maskTypeB"> 绿色 <input type="radio" value="4" @change="selMaskType" v-model="maskTypeB"> 蓝色</span>遮罩颜色</p>
+                            <p><span class="set-rt"><output>{{maskVal}}</output></span><span class="set-inline">遮罩(0)</span><input type="range" min="0" max="10" step="1" :value="maskVal" id="back-mask-val" @input="updateBackConf('back-mask-val')"></p>
+                            <p><span class="set-rt"><output>{{blurVal}}</output>px</span><span class="set-inline">模糊(0px)</span><input type="range" min="0" max="40" step="1" :value="blurVal" id="back-blur-val" @input="updateBackConf('back-blur-val')"></p>
+
+                        </div>
+
+                        <div class="custom-btn"><input type="button" value="保存" @click="saveBackConf()">&nbsp;&nbsp;&nbsp;<input
+                                type="button" value="关闭" @click="cancelSetConf"></div>
+                    </div>
+
+                    <div class="conf-frame-rt" v-show="confItemIndex == 3">
+                        <div class="set-caption"><h2>搜索引擎设置（第3列）</h2><i class="far fa-times-circle" @click="cancelSetConf" title="关闭"></i></div>
+                                                <div class="set-conf-list">
+                            <p>提示：登录后可设置</p>
+                        </div>
+                                            </div>
+                    <div class="conf-frame-rt" v-show="confItemIndex == 4">
+                        <div class="set-caption"><h2>关于</h2><i class="far fa-times-circle" @click="cancelSetConf" title="关闭"></i></div>
+                        <div class="set-conf-list">
+                            <p><i class="far fa-hand-point-right cust-dist-rt"></i><a href="/aboutus" target="_blank" rel="nofollow">关于我们</a></p>
+                            <p><i class="far fa-hand-point-right cust-dist-rt"></i><a href="/friendlink" target="_blank">友情链接</a></p>
+                            <p><i class="far fa-hand-point-right cust-dist-rt"></i><a href="/contactus" target="_blank" rel="nofollow">联系我们</a></p>
+                            <p><i class="far fa-hand-point-right cust-dist-rt"></i><a href="/copyright" target="_blank" rel="nofollow">版权声明</a></p>
+                            <p><i class="far fa-hand-point-right cust-dist-rt"></i><a href="/privacy" target="_blank" rel="nofollow">隐私政策</a></p>
+                        </div>
+                    </div>
+                    <div class="conf-frame-rt" v-show="confItemIndex == 5">
+                        <div class="set-caption"><h2>使用帮助</h2><i class="far fa-times-circle" @click="cancelSetConf" title="关闭"></i></div>
+                        <div class="set-conf-list">
+                            <p><strong>咪咕鱼插件：</strong><a href="https://chrome.google.com/webstore/detail/kmgchajiidnmefagfhogdohhbcglopfa" target="_blank">Chrome</a>&nbsp;&nbsp;&nbsp;<a href="https://microsoftedge.microsoft.com/addons/detail/%E5%92%AA%E5%92%95%E9%B1%BC%E4%B8%BB%E9%A1%B5/cibmpchjenhmdiajkighkdgkahfhcgjg" target="_blank">Edge插件</a>&nbsp;&nbsp;&nbsp;<a href="https://file.miguyu.com/crx/miguyu_tab.crx" target="_blank">离线版</a></p>
+                            <p>交流QQ群：584330841</p>
+                            <p><i class="far fa-hand-point-right cust-dist-rt"></i><a href="/guide" target="_blank">使用指南</a></p>
+                            <p><i class="far fa-hand-point-right cust-dist-rt"></i><a href="https://support.qq.com/product/318624" target="_blank" rel="nofollow">留言反馈</a></p>
+                            <p><strong>常见问题：</strong></p>
+                            <p><a href="https://support.qq.com/products/318624/faqs-more?id=117779" target="_blank" rel="nofollow">如何自定义背景？</a></p>
+                            <p><a href="https://support.qq.com/products/318624/faqs-more?id=113914" target="_blank" rel="nofollow">如何解决每次浏览器关闭后都要重新登录？</a></p>
+                            <p><a href="https://support.qq.com/products/318624/faqs-more?id=104018" target="_blank" rel="nofollow">如何设置咪咕鱼为浏览器主页？</a></p>
+                            <p><a href="https://www.miguyu.com/guide#guide-url-4" target="_blank" >咪咕鱼如何自定义网址？</a></p></div>
+                    </div>
+                    <div class="conf-frame-rt" v-show="confItemIndex == 6">
+                        <div class="set-caption"><h2>合作</h2><i class="far fa-times-circle" @click="cancelSetConf" title="关闭"></i></div>
+                        <div class="set-conf-list">
+                            <p><i class="far fa-hand-point-right cust-dist-rt" style="color: #b22222"></i><a href="https://picwish.cn/remove-background?apptype=miguyu" target="_blank">佐糖抠图</a></p>
+                            <p><i class="far fa-hand-point-right cust-dist-rt" style="color: #b22222"></i><a href="https://www.smartread.cc/?from=mgy" target="_blank">AI读文档</a></p>
+                            <p><i class="far fa-hand-point-right cust-dist-rt" style="color: #b22222"></i><a href="https://shutu.cn/?from=miguyu" target="_blank">TreeMind树图</a></p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+        <div class="activityModal" id="frm-activity" v-show="isActModelShow" v-cloak>
+            <div class="act-panel">
+                <div class="act-caption"><h2>活动入口</h2><i class="far fa-times-circle" @click="cancelActFrm" title="关闭"></i></div>
+                <div class="act-conf-list">
+                    <p class="act-hongbao"><a href="https://s.click.taobao.com/MKfK6Su" target="_blank" rel="nofollow">天猫双11超级红包会场</a></p>
+                    <p class="act-hongbao"><a href="https://u.jd.com/xCLLTI2" target="_blank" rel="nofollow">京东11.11红包主会场</a></p>
+                    <p class="act-wenjuan"><a href="http://miguyu666.mikecrm.com/2AksHdn" target="_blank" rel="nofollow">调查：您希望咪咕鱼导航提供什么样的背景图片？</a></p>
+                </div>
+                <div class="custom-btn"><input type="button" value="关闭" @click="cancelActFrm"></div>
+            </div>
+        </div>
+
+        <div id="backModel" v-show="isBackModelShow" v-cloak>
+            <div class="back-panel">
+                <div class="back-left">
+                    <div class="back-item-caption"></div>
+                    <ul>
+                        <li @click="selectBackItem(0)" :class="{active: backItemIndex==0}"><i>背&nbsp;景&nbsp;库</i></li>
+                        <li @click="selectBackItem(1)" :class="{active: backItemIndex==1}"><i>网络背景</i></li>
+                    </ul>
+                </div>
+                <div class="back-right">
+                    <div class="back-content">
+                        <ul class="back-db-fr" v-show="backItemIndex == 0">
+                            <li v-for="(item,index) in themeLists" :class="{active: item.id==selThemeIndex}"
+                                @click="selectTheme(item.id,0)">
+                                <!--<img :src="item.thumb"/>-->
+                                <!--<img v-lazyload="item.thumb"/>-->
+                                <img :data-original="item.thumb"/>
+                                <p>{{item.name}}</p><i class="fas fa-check-circle"></i>
+                            </li>
+                                                    </ul>
+                        <ul v-show="backItemIndex == 1">
+                            <div class="net-color-fr">
+                                <li :class="{active: selThemeIndex == -2}" @click="selectTheme(-2,2)">
+                                    <img src="https://cdn.miguyu.com/imgs/bg/thumb0.jpg"/>
+                                    <p>网络背景</p>
+                                    <i class="fas fa-check-circle"></i>
+                                </li>
+                                <div class="set-color-box" v-show="selThemeIndex == -2">
+                                    <div class="pic-url-fr"><label>图片地址(https://开头)：</label><input type="text"
+                                                                                                   class="input-text-style"
+                                                                                                   id="net-pic-url"
+                                                                                                   name="net-pic-url"
+                                                                                                   maxlength="256"
+                                                                                                   size="30"
+                                                                                                   placeholder="请输入网络图片地址"
+                                                                                                   @keyup="stNetBg"
+                                                                                                   @mouseup="stNetBg">
+                                    </div>
+                                    <label>文字颜色：</label><input id="text-color" class="jscolor" @change="setTextColor(0)"
+                                                               value="111111">&nbsp;&nbsp;&nbsp;<label>栏目颜色：</label><input
+                                        id="cat-color" class="jscolor" @change="setTextColor(1)" value="111111">&nbsp;&nbsp;&nbsp;<input
+                                        type="checkbox" id="check-ray" class="cust-checkbox" :checked="isRayChecked"
+                                        @click="checkRay"><label
+                                        style="color: #F2F2F2">光亮</label>&nbsp;&nbsp;&nbsp;<label>光亮颜色：</label><input
+                                        id="ray-color" class="jscolor" @change="setTextColor(2)" value="FFFFFF">
+                                </div>
+                            </div>
+                        </ul>
+
+                    </div>
+                    <p><button id="saveTheme" @click="saveTheme">保存</button>&nbsp;&nbsp;&nbsp;<button id="closeTheme" @click="closeTheme">关闭</button></p>
+                    <p class="theme-tip"></p>
+                </div>
+            </div>
+        </div>
+
+                <div class="loginModal" id="frm-login-modal">
+            <div class="login-panel" id="frm-log">
+                <div class="login-caption"><h2>手机登录</h2><i class="far fa-times-circle" @click="cancelLogin" title="取消"></i></div>
+                <div class="xx-member">
+                    <form method="post" action="" id="myform5" name="myform5" onsubmit="return checkLogInfo()">
+                        <div class="input">
+                            <input type="text" class="text-style" id="mobile5" name="mobile5" maxlength="11" size="36" placeholder="请输入手机号">
+                        </div>
+                        <div class="input">
+                            <input type="password" class="text-style" id="password5" name="password5" size="36" placeholder="请输入密码">
+                        </div>
+                        <div class="input-submit"><input type="submit" name="dosubmit5" id="dosubmit5" value="登录"></div>
+                        <p class="toggle-login">
+                                <span class="toggle-txt-lt"></span><span
+                                class="toggle-txt-rt"><em class="handPo" @click="showFgt()">忘记密码</em>&nbsp;|&nbsp;<em class="handPo" @click="toggleMode(1)">注册</em></span>
+                        </p>
+                        <p class="error-log-tip"></p>
+                        <div class="log-space-line"></div>
+                        <div class="social-conn"><span class="handPo" onclick="showLogWxFrm()"><img src="https://cdn.miguyu.com/imgs/appicon/01_wx_logo.png">微信登录</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="handPo" onclick="qqLogin()"><img src="https://cdn.miguyu.com/imgs/appicon/01_qq_logo.png">QQ登录</span></div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="login-panel" id="frm-log-wx">
+                <div class="login-caption"><h2>微信登录</h2><i class="far fa-times-circle" @click="cancelLogin" title="取消"></i></div>
+                <div class="xx-member">
+                    <form method="post" action="" id="myform30" name="myform30">
+                        <p style="text-align: center; font-size: 18px"><i style="color: #01be0a" class="fab fa-weixin"></i>&nbsp;微信扫码登录</p>
+                        <div class="wx-qrcode-fr"><img id="wx-log-qrcode" src="/imgloadingcode.gif" style="width: 240px; height: 240px"/></div>
+                        <p style="text-align: center">扫码后「关注公众号」即可登录或注册</p>
+                        <p class="error-log-wx-tip"></p>
+                        <div class="log-space-line" style="margin-top: 10px"></div>
+                        <div class="social-conn"><span class="handPo" onclick="showLogFrm()"><img src="https://cdn.miguyu.com/imgs/appicon/01_mbphone.png">手机登录</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="handPo" onclick="qqLogin()"><img src="https://cdn.miguyu.com/imgs/appicon/01_qq_logo.png">QQ登录</span></div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="login-panel" id="frm-reg">
+                <div class="login-caption"><h2>用户注册</h2><i class="far fa-times-circle" @click="cancelLogin" title="取消"></i></div>
+                <div class="xx-member">
+                    <form method="post" action="/member/public_register" id="myform" name="myform">
+                        <div class="input">
+                            <input type="text" class="text-style"  id="mobile" name="mobile" maxlength="11" size="36" placeholder="输入手机号">
+                        </div>
+                        <div class="input">
+                            <input type="password" class="text-style" id="password" name="password" size="36" placeholder="设置密码">
+                        </div>
+                        <div class="input verify-wrap" style="height: 40px; width: 450px" id="verify-wrap"></div>
+                        <div class="input required" style="min-height:70px; margin-top: 20px;">
+                            <input type="text" class="text-style input-code" id="mobile_verify" name="mobile_verify"
+                                   size="36" placeholder="短信验证码"><span id="mobile_div"><button id="isGetVerify"
+                                                                                     class="btn-get-smscode"
+                                                                                     type="button"
+                                                                                     disabled>获取验证码</button></span>
+                        </div>
+                        <p class="agreemen-txt"><input type="checkbox" name="protocol" id="protocol" value="" checked> 请阅读<a href="/privacy" target="_blank">隐私政策</a></p>
+                        <div class="input-submit"><input type="submit" name="dosubmit" id="dosubmit" disabled value="注册" onclick="subReg(this.form)"></div>
+                        <p class="toggle-login"><span>已有账号，请 <em class="handPo" @click="toggleMode(0)">登录</em></span></p>
+                    </form>
+                </div>
+            </div>
+
+            <div class="login-panel" id="frm-forget-pw">
+                <div class="login-caption"><h2>忘记密码</h2><i class="far fa-times-circle" title="返回" @click="backLogin()"></i></div>
+                <div class="xx-member">
+                    <form method="post" action="" id="myform8" name="myform8" onsubmit="return checkFgtInfo()">
+                        <div class="input">
+                            <input type="text" class="text-style" id="mobile8" name="mobile8" maxlength="11" size="36" placeholder="请输入手机号">
+                        </div>
+                        <div class="input verify-wrap" style="height: 40px; width: 450px" id="verify-wrap2"></div>
+                        <div class="input required" style="min-height:70px; margin-top: 20px;">
+                            <input type="text" class="text-style input-code" id="mobile_verify2" name="mobile_verify2"
+                                   size="36" placeholder="短信验证码"><span id="mobile_div2"><button id="isGetVerify2"
+                                                                                               class="btn-get-smscode"
+                                                                                               type="button"
+                                                                                               disabled>获取验证码</button></span>
+                        </div>
+                        <div class="input-submit"><input type="submit" name="dosubmit8" id="dosubmit8" value="确定"></div>
+                        <p class="toggle-login">
+                            <span><em class="handPo" @click="backLogin()">返回登录</em></span>
+                        </p>
+                        <p class="error-fgt-tip"></p>
+                    </form>
+                </div>
+            </div>
+
+            <div class="login-panel" id="frm-reset-pw">
+                <div class="login-caption"><h2>重置密码</h2><i class="far fa-times-circle" title="退出" @click="cancelReset()"></i></div>
+                <div class="xx-member">
+                    <form method="post" action="" id="myform9" name="myform9" onsubmit="return checkResetInfo()">
+                        <div class="input"><input type="password" class="text-style" id="password9" name="password9" size="36" placeholder="输入密码"></div>
+                        <div class="input"><input type="password" class="text-style" id="password10" name="password10" size="36" placeholder="再次输入密码"></div>
+                        <div class="input-submit"><input type="submit" name="dosubmit9" id="dosubmit9" value="确定"></div>
+                        <p class="toggle-login"><span class="toggle-txt-lt"></span><span class="toggle-txt-rt"></span></p>
+                        <p class="error-reset-tip"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        
+
+        <div id="footer" v-cloak>
+            <p class="bot-link"><span class="handPo" onclick="openMiguyuDialog(1)" v-show="showHotB==0" v-cloak>&nbsp;&nbsp;<i class="fas fa-fire-alt"></i>&nbsp;热榜</span>&nbsp;&nbsp;<span class="handPo" @click="showSetConf()"><i class="fas fa-cog"></i>&nbsp;设置</span>&nbsp;&nbsp;<span class="handPo" @click="showModelTheme()"><i class="fas fa-tshirt"></i>&nbsp;背景</span>&nbsp;&nbsp;<span class="handPo" @click="showModelSite()"><i class="fas fa-globe"></i>&nbsp;网址</span>&nbsp;&nbsp;<span class="handPo" @click="showLogin()">登录</span>&nbsp;&nbsp;</p>
+                        <p class="footer-info" v-show="bFooterInfo==0" :style="{'height':(bFooterInfo==0?'12px':'0') }">Copyright © 2021-2024 南京百千帮信息科技有限公司，<a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow">苏ICP备17008083号-12</a>&nbsp;&nbsp;&nbsp;<a href="/friendlink" target="_blank">友情链接</a>&nbsp;&nbsp;<a href="/aboutus" target="_blank" rel="nofollow">关于我们</a>&nbsp;&nbsp;<a href="/guide" target="_blank">使用指南</a>&nbsp;&nbsp;<span class="handPo" onclick="giveSubject()">留言反馈</span></p>
+                    </div>
+    </div>
+
+    <div class="miguyu-dialog-1" id="hotbang">
+        <div class="dialog-fr" @click="hotShowOut"></div>
+        <div class="hot-bang"  v-show="isHotWinShow"  v-cloak @click="hotShowIn">
+            <div class="hot-frame-top">
+                <div class="hot-frame-top-lt"></div>
+                <div class="hot-frame-top-tit"><img src="//cdn.miguyu.com/icon/hotbang.png"></div>
+                <div class="hot-frame-top-rt"><i class="far fa-times-circle" title="退出" @click="cancelHotFrm()"></i></div>
+                <div class="hot-frame-card-type">
+                    <button class="hot-type-btn-set" :class="{active: hotTypeID==-1}" @click="hotFitByType(-1)">我的收藏</button>
+                    <button class="hot-type-btn-set" :class="{active: hotTypeID== 0}" @click="hotFitByType(0)">所有</button>
+                    <button class="hot-type-btn-set" :class="{active: hotTypeID== 1}" @click="hotFitByType(1)">综合</button>
+                    <button class="hot-type-btn-set" :class="{active: hotTypeID== 2}" @click="hotFitByType(2)">视频</button>
+                    <button class="hot-type-btn-set" :class="{active: hotTypeID== 3}" @click="hotFitByType(3)">社区</button>
+                    <button class="hot-type-btn-set" :class="{active: hotTypeID== 4}" @click="hotFitByType(4)">科技</button>
+                </div>
+            </div>
+            <div class="hot-frame-left">
+                <ul>
+                    <li v-for="item11 in hotSrcInfos"  :class="{active: hotItemIndex==item11.id}" @click="getHotInfo(item11.id)" @mouseenter="hotHover(item11.id)" @mouseleave="delHotHover(0)"><div class="hot-des-img-fr"><img :src="item11.logo"></div><i class="hot-cat-tit">{{item11.title}}{{item11.subtitle}}</i><i class="far fa-star" title="取消收藏" v-if="hotFavShow(item11.id)>=0" @click="cancelHotFav(item11.id)"></i><i class="fas fa-star" title="收藏" v-if="hotFavShow(item11.id)<0 && item11.id == hoverHotIndex"  @click="subHotFav(item11.id)" ></i><div class="hot-fav-updown" v-show="hotTypeID==-1"><i class="fas fa-caret-up hot-up-down" title="向上排序" @click="hotFavUp(item11.id)"></i></div></li>
+                </ul>
+            </div>
+
+            <div class="hot-frame-rt">
+                <div class="hot-descrip"><div class="hot-des-lf"><div class="hot-des-img-fr"><img :src="hotDescInfo.logo"></div><span>{{hotDescInfo.title}}{{hotDescInfo.subtitle}}</span></div> </div>
+                <div class="hot-list-fr">
+                    <div v-for="item9 in hotBangLists.data" class="hot-info-text">
+                        <div class="hot-info-order"><span :style="hotTitColor(item9.index)">{{item9.index}}</span></div>
+                        <a :href="item9.link" target="_blank">
+                            <div class="hot-info-title">{{item9.title}}</div>
+                        </a>
+                        <div class="hot-info-rd">{{item9.hot}}</div>
+                    </div>
+
+                </div>
+            </div>
+    </div>
+    </div>
+
+    <div id="help">
+        <loading v-show="showLoading">
+            <div class="loading-overlay">
+                <div class="sk-three-bounce">
+                    <div class="sk-child sk-bounce1"></div>
+                    <div class="sk-child sk-bounce2"></div>
+                    <div class="sk-child sk-bounce3"></div>
+                </div>
+            </div>
+        </loading>
+        <div class="dialogModal" v-show="showDialog" v-cloak>
+            <div class="dialog-panel">
+                <div class="dialog-header"><h2>注  意</h2></div>
+                <div class="dialog-body">
+                    <p class="dialog-text">
+                        {{dialogText}}
+                    </p>
+                </div>
+                <div class="dialog-btn"><button id="dialogOKbtn" @click="synoOK">确定</button></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var helpVue = new Vue({
+            el: '#help',
+            data: {
+                showLoading: false,
+                showDialog: false,
+                dialogText: '',
+                countTime: 3
+            },
+            methods: {
+                countDown:function() {
+                    this.dialogText = '检测到网址数据不同步，需刷新页面，将在'+this.countTime + 's后刷新！';
+                    that = this;
+                    var tmpCount = this.countTime;
+                    let clock = window.setInterval(function(){
+                        tmpCount--;
+                        that.dialogText = '检测到网址数据不同步，需刷新页面，将在'+tmpCount + 's后刷新！';
+                        if (tmpCount <=0 ){
+                            location.reload();
+                        }
+                        console.log(tmpCount);
+                    },1000);
+                },
+                synoOK:function(){
+                    location.reload();
+                }
+            }
+        });
+        Vue.http.interceptors.push(function (request, next) {
+            if (request.method === 'POST'){
+                console.log('test11');
+                helpVue.showLoading = true;
+                next(function (response) {
+                    helpVue.showLoading = false;
+                    return response;
+                });
+            }
+        });
+
+    </script>
+
+    <script>
+    var fTs = [];
+    var pJpara = '';
+    ranTheme = {"id":-1,"type":0,"url":"","color":"#FFFFFF","color1":"#FFFFFF","ray":"#F5F5F5","op":1};
+    moTheme = {"id":0,"type":0,"thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb0.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/custHaiVV0001xvc.jpg","color":"#111111","color1":"#111111","ray":"#F5F5F5","op":1};
+    fTs = [{"id":0,"type":0,"name":"\u9ed8\u8ba4\u80cc\u666f","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb0.jpg","url":"","color":"#111111","color1":"#111111","ray":"#F5F5F5","op":1},{"id":1,"type":0,"name":"\u65e0\u80cc\u666f","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb0.jpg","url":"","color":"#111111","color1":"#111111","ray":"#F0FFFF","op":1},{"id":2,"type":0,"name":"\u770b\u677f\u5a18\u5e0c\u5e0c","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumbxixi1.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/CUST210400xiBes1V3.jpg","color":"#1C1C1C","color1":"#121212","ray":"#F5F5F5","op":1},{"id":15,"type":11,"name":"\u7480\u74a8\u661f\u6cb3","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb15.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco194445bba8596x940.jpg","color":"#FFFFFF","color1":"#F2F0F0","ray":"#111111","op":1},{"id":13,"type":11,"name":"\u7eff\u68ee\u5149\u5f71","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb13.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco168608dd1133M.jpg","color":"#F5F5F5","color1":"#EBE9E9","ray":"#25700C","op":1},{"id":46,"type":0,"name":"\u78a7\u6d77\u6c99\u6ee9","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb46.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco43639Bea3471Sky.jpg","color":"#111111","color1":"#1F1F1F","ray":"#F5F5F5","op":1},{"id":12,"type":0,"name":"\u68a6\u5e7b\u6d77\u8fb9","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb12.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/custHaiVV0001xvc.jpg","color":"#111111","color1":"#111111","ray":"#F5F5F5","op":1},{"id":35,"type":0,"name":"\u661f\u7a7a\u591c\u666f","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb35.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco7003Axz11094c.jpg","color":"#E2E2E2","color1":"#A4A4A4","ray":"#F5F5F5","op":1},{"id":39,"type":0,"name":"\u68a6\u5e7b\u7eff\u6d32","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumblvz.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/custMh998lvz998zz12.jpg","color":"#FFFFFF","color1":"#E3E3E3","ray":"#F5F5F5","op":1},{"id":22,"type":0,"name":"\u6c34\u58a8\u5c71\u5cf0","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb22.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco164360SM2171.jpg","color":"#111111","color1":"#111111","ray":"#F5F5F5","op":1},{"id":23,"type":11,"name":"\u591a\u5f69\u95ea\u7535","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb23.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco29139dd0287.jpg","color":"#DCDCDA","color1":"#A9A9A9","ray":"#411B40","op":1},{"id":26,"type":11,"name":"\u6e56\u8fb9\u9759\u6865","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb26.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco8388op3436.jpg","color":"#F5F5F5","color1":"#F5F5F5","ray":"#474747","op":1},{"id":42,"type":0,"name":"\u7c89\u91d1\u7eb9\u7406","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb42.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco17700vXm23972n9N.jpg","color":"#373737","color1":"#181818","ray":"#F5F5F5","op":1},{"id":10,"type":0,"name":"\u7eaf\u9ed1\u80cc\u666f","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb10.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/cun100010HEI010.jpg","color":"#A8A59C","color1":"#777777","ray":"#F5F5F5","op":1},{"id":47,"type":0,"name":"\u6000\u65e7\u9ed1\u677f","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb47.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco18943bLk99534boD.jpg","color":"#F2F2F2","color1":"#E3E3E3","ray":"#F5F5F5","op":1},{"id":11,"type":0,"name":"\u5962\u534e\u9ed1\u91d1","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb11.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco154288Yb6013.jpg","color":"#A8A59C","color1":"#777777","ray":"#F5F5F5","op":1},{"id":30,"type":0,"name":"\u7070\u8272\u78e8\u7802","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb30.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/custYY001ms0001.jpg","color":"#111111","color1":"#111111","ray":"#F2F2F2","op":1},{"id":43,"type":0,"name":"\u8c6a\u534e\u91d1\u8272","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb43.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco17875nIP94180ipN8.jpg","color":"#373737","color1":"#181818","ray":"#F5F5F5","op":1},{"id":95,"type":0,"name":"\u7d2b\u7ea2\u76f8\u95f4","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb95.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/Tux2239PikA261012vBG.jpg","color":"#F5F5F5","color1":"#E0E0E0","ray":"#F5F5F5","op":1},{"id":96,"type":0,"name":"\u9ec4\u7eff\u6d6a\u7eb9","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb96.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/Tux22392GrEE61015Nkf.jpg","color":"#333333","color1":"#111111","ray":"#F5F5F5","op":1},{"id":97,"type":0,"name":"\u6df1\u84dd\u6d41\u4f53","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb97.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/Tux128609Shen7952LvB.jpg","color":"#F2F2F2","color1":"#E0E0E0","ray":"#F5F5F5","op":1},{"id":99,"type":0,"name":"\u7d2b\u8272\u70b9\u7ebf","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb99.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/Tux6939Purp34705StA.jpg","color":"#F2F2F2","color1":"#E0E0E0","ray":"#F5F5F5","op":1},{"id":100,"type":0,"name":"\u6d45\u7eff\u6ce2\u7eb9","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb100.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/Tux22415LvSE89875Ewn.jpg","color":"#F2F2F2","color1":"#E0E0E0","ray":"#F5F5F5","op":1},{"id":101,"type":0,"name":"\u7ea2\u84dd\u52a8\u611f","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb101.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/Tux22403ZreD69512Hon.jpg","color":"#F2F2F2","color1":"#E0E0E0","ray":"#F5F5F5","op":1},{"id":48,"type":0,"name":"\u65e5\u843d\u9ec4\u660f","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb48.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco65603sUN8402Set.jpg","color":"#111111","color1":"#111111","ray":"#F5F5F5","op":1},{"id":21,"type":11,"name":"\u5149\u5f71\u5954\u6708","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb21.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco182766hx7013.jpg","color":"#F5F5F5","color1":"#FF4500","ray":"#FF0000","op":1},{"id":103,"type":0,"name":"\u5f69\u8272\u70df\u96fe","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb103.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/kTs22367YanZ61133Bxd.jpg","color":"#F2F2F2","color1":"#E0E0E0","ray":"#F5F5F5","op":1},{"id":109,"type":11,"name":"\u7c89\u8272\u6a31\u82b1","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb109.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/kTs21843YinA88049LaG.jpg","color":"#F2F2F2","color1":"#F2F2F2","ray":"#1C151A","op":1},{"id":105,"type":0,"name":"\u591c\u5e55\u70df\u82b1","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb105.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/kTs10215YhuA11314ssG.jpg","color":"#F2F2F2","color1":"#E0E0E0","ray":"#F5F5F5","op":1},{"id":106,"type":0,"name":"\u591c\u7a7a\u95ea\u7535","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb106.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/kTs19922ThuD16824Yem.jpg","color":"#F2F2F2","color1":"#E0E0E0","ray":"#F5F5F5","op":1},{"id":24,"type":11,"name":"3D\u5f69\u6708\u591c","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb24.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco191703mO0854.jpg","color":"#F5F5F5","color1":"#F5F5F5","ray":"#111111","op":1},{"id":45,"type":0,"name":"\u6d77\u5c9b\u65e5\u843d","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb45.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco1102pur114493PLE.jpg","color":"#831A41","color1":"#741639","ray":"#F5F5F5","op":1},{"id":52,"type":0,"name":"\u9752\u7eff\u5c71\u5cf0","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb52.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco11503lVe43039Hil.jpg","color":"#111111","color1":"#000000","ray":"#F5F5F5","op":1},{"id":107,"type":0,"name":"\u9177\u70ab\u8dd1\u8f66","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb107.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/kTs67130PaoC2684Kux.jpg","color":"#F2F2F2","color1":"#E0E0E0","ray":"#F5F5F5","op":1},{"id":62,"type":0,"name":"\u9752\u5cf0\u767d\u9e6d","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb62.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/orf22369kAcJ00797EEC.jpg","color":"#1A1A1A","color1":"#111111","ray":"#F5F5F5","op":1},{"id":108,"type":0,"name":"[\u6f2b]\u7a7a\u4e2d\u5973\u5b69","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb108.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/kTs14397Redd07541Grt.jpg","color":"#F2F2F2","color1":"#E0E0E0","ray":"#F5F5F5","op":1},{"id":54,"type":0,"name":"[\u6f2b]\u6253\u4f1e\u5973\u5b69","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb54.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco20550UMb19541grE.jpg","color":"#F2F2F2","color1":"#E3E3E3","ray":"#F5F5F5","op":1},{"id":56,"type":0,"name":"[\u6f2b]\u5f13\u5f29\u5973\u5b69","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb56.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco21291GoJ88898pIr.jpg","color":"#F2F2F2","color1":"#E3E3E3","ray":"#F5F5F5","op":1},{"id":57,"type":0,"name":"[\u6f2b]\u6708\u4e0b\u5973\u5b69","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb57.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco192380Ble7728rrU.jpg","color":"#F2F2F2","color1":"#E3E3E3","ray":"#F5F5F5","op":1},{"id":60,"type":0,"name":"[\u6f2b]\u7d2b\u8272\u5973\u5b69","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb60.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco212917ULe8998Pur.jpg","color":"#242424","color1":"#000000","ray":"#F5F5F5","op":1},{"id":72,"type":11,"name":"[\u6f2b]\u706b\u9f99\u73b0\u4e16","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb72.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco21396HuoH47765Lon.jpg","color":"#F2F2F2","color1":"#E6E6E6","ray":"#66370A","op":1},{"id":74,"type":0,"name":"[\u6f2b]\u52c7\u6562\u9a91\u58eb","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb74.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco21406YogA21701QiS.jpg","color":"#F2F2F2","color1":"#E6E6E6","ray":"#F5F5F5","op":1},{"id":81,"type":0,"name":"[\u5c71]\u65e5\u843d\u7ea2\u67ab","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb81.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco179282Rich6242shA.jpg","color":"#262626","color1":"#111111","ray":"#F5F5F5","op":1},{"id":82,"type":0,"name":"[\u5c71]\u9752\u5c71\u72ec\u821f","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb82.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/orf224131qinQ6665zOu.jpg","color":"#262626","color1":"#111111","ray":"#F5F5F5","op":1},{"id":83,"type":0,"name":"[\u5c71]\u7fa4\u5c71\u51c9\u4ead","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb83.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/orf22399KzYu68001hhU.jpg","color":"#262626","color1":"#111111","ray":"#F5F5F5","op":1},{"id":84,"type":0,"name":"[\u5c71]\u70df\u6ce2\u53cc\u821f","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb84.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/orf22393qiYa46776zfF.jpg","color":"#262626","color1":"#111111","ray":"#F5F5F5","op":1},{"id":85,"type":0,"name":"[\u5c71]\u7ea2\u8863\u6cdb\u821f","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb85.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/orf22389redF40000GIR.jpg","color":"#262626","color1":"#111111","ray":"#F5F5F5","op":1},{"id":80,"type":0,"name":"[\u5c71]\u5de8\u9f99\u76d8\u5c71","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb80.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/orf22380JUlo63119Pan.jpg","color":"#262626","color1":"#111111","ray":"#F5F5F5","op":1},{"id":33,"type":11,"name":"\u6570\u5b57Sunset","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb33.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco193463nYT7920y940.jpg","color":"#F4F4F4","color1":"#414141","ray":"#8B4735","op":1},{"id":29,"type":0,"name":"\u7d2b\u8272\u65e5\u843d","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb29.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco144466cX3313.jpg","color":"#545454","color1":"#1C1C1C","ray":"#A30B92","op":1},{"id":37,"type":11,"name":"\u7eff\u53f6\u9732\u73e0","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb37.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco7041bbQ64531de.jpg","color":"#F1F1F1","color1":"#A7A7A7","ray":"#196771","op":1},{"id":25,"type":0,"name":"\u96fe\u4e2d\u4e4b\u57ce","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb25.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/aco17767zf4699.jpg","color":"#111111","color1":"#111111","ray":"#F5F5F5","op":1},{"id":14,"type":11,"name":"\u78a7\u6d77\u84dd\u5929","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb14.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/cut3080saib940001.jpg","color":"#F5F5F5","color1":"#F5F5F5","ray":"#0772A8","op":1},{"id":63,"type":0,"name":"\u4e61\u6c34\u7eff\u8272","thumb":"https:\/\/cdn.miguyu.com\/imgs\/bg\/thumb63.jpg","url":"https:\/\/cdn.miguyu.com\/imgs\/bg\/orf22410ChUL81702Liu.jpg","color":"#262626","color1":"#111111","ray":"#F5F5F5","op":1}];
+    const pAcust = '67c9fb5068073d78cb5ad76182698fc5';
+    const rawEngines = [{"id":0,"name":"\u767e\u5ea6","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/baidu2.png')","url":"https:\/\/www.baidu.com\/s?wd="},{"id":1,"name":"\u641c\u72d7","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/sogou2.png')","url":"https:\/\/www.sogou.com\/web?query="},{"id":2,"name":"360","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/360so2.png')","url":"https:\/\/www.so.com\/s?q="},{"id":3,"name":"Google","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/google2.png')","url":"https:\/\/www.google.com\/search?q="},{"id":4,"name":"Bing","img":"url('https:\/\/cdn.miguyu.com\/imgs\/svgi\/bing.svg')","url":"https:\/\/cn.bing.com\/search?q="},{"id":13,"name":"\u77e5\u4e4e","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/zhihu2.png')","url":"https:\/\/www.zhihu.com\/search?q="},{"id":16,"name":"B\u7ad9","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/bilibili2.png')","url":"https:\/\/search.bilibili.com\/all?keyword="},{"id":8,"name":"\u6dd8\u5b9d","img":"url('https:\/\/cdn.miguyu.com\/imgs\/svgi\/taobao.svg')","url":"https:\/\/s.taobao.com\/search?q="},{"id":10,"name":"\u4eac\u4e1c","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/jd2.png')","url":"https:\/\/search.jd.com\/Search?keyword="},{"id":14,"name":"\u767e\u5ea6\u5730\u56fe","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/baidumap2.png')","url":"https:\/\/map.baidu.com\/search\/?querytype=s&wd="},{"id":18,"name":"\u767e\u5ea6\u7ffb\u8bd1","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/baidufanyi2.png')","url":"https:\/\/fanyi.baidu.com\/?#zh\/en\/"},{"id":20,"name":"\u5934\u6761\u641c\u7d22","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/toutiao2.png')","url":"https:\/\/so.toutiao.com\/search?dvpf=pc&source=input&keyword="},{"id":15,"name":"\u4e91\u97f3\u4e50","img":"url('https:\/\/cdn.miguyu.com\/imgs\/svgi\/yunyinyue.svg')","url":"https:\/\/music.163.com\/#\/search\/m\/?s="},{"id":17,"name":"\u5fae\u535a","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/weibo2.png')","url":"https:\/\/s.weibo.com\/weibo?q="},{"id":12,"name":"\u7231\u5947\u827a","img":"url('https:\/\/cdn.miguyu.com\/imgs\/svgi\/iqiyi.svg')","url":"https:\/\/so.iqiyi.com\/so\/q_"},{"id":19,"name":"Github","img":"url('https:\/\/cdn.miguyu.com\/imgs\/svgi\/github.svg')","url":"https:\/\/github.com\/search?q="},{"id":11,"name":"\u767e\u5ea6\u56fe\u7247","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/baidupic2.png')","url":"https:\/\/image.baidu.com\/search\/index?tn=baiduimage&word="},{"id":22,"name":"\u77e5\u7f51","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/cnki2.png')","url":"https:\/\/kns.cnki.net\/KNS8\/DefaultResult\/Index?dbcode=SCDB&kw="},{"id":7,"name":"Yandex","img":"url('https:\/\/cdn.miguyu.com\/statics\/search\/yandex.png')","url":"https:\/\/yandex.com\/search\/?text="},{"id":23,"name":"\u5fae\u4fe1","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/weixin2.png')","url":"https:\/\/weixin.sogou.com\/weixin?type=2&s_from=input&query="},{"id":21,"name":"\u817e\u8baf\u89c6\u9891","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/qqv2.png')","url":"https:\/\/v.qq.com\/x\/search\/?q="}];
+    var searchEngines = [{"id":0,"name":"\u767e\u5ea6","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/baidu2.png')","url":"https:\/\/www.baidu.com\/s?wd="},{"id":1,"name":"\u641c\u72d7","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/sogou2.png')","url":"https:\/\/www.sogou.com\/web?query="},{"id":2,"name":"360","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/360so2.png')","url":"https:\/\/www.so.com\/s?q="},{"id":3,"name":"Google","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/google2.png')","url":"https:\/\/www.google.com\/search?q="},{"id":4,"name":"Bing","img":"url('https:\/\/cdn.miguyu.com\/imgs\/svgi\/bing.svg')","url":"https:\/\/cn.bing.com\/search?q="},{"id":13,"name":"\u77e5\u4e4e","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/zhihu2.png')","url":"https:\/\/www.zhihu.com\/search?q="},{"id":16,"name":"B\u7ad9","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/bilibili2.png')","url":"https:\/\/search.bilibili.com\/all?keyword="},{"id":8,"name":"\u6dd8\u5b9d","img":"url('https:\/\/cdn.miguyu.com\/imgs\/svgi\/taobao.svg')","url":"https:\/\/s.taobao.com\/search?q="},{"id":10,"name":"\u4eac\u4e1c","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/jd2.png')","url":"https:\/\/search.jd.com\/Search?keyword="},{"id":14,"name":"\u767e\u5ea6\u5730\u56fe","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/baidumap2.png')","url":"https:\/\/map.baidu.com\/search\/?querytype=s&wd="},{"id":18,"name":"\u767e\u5ea6\u7ffb\u8bd1","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/baidufanyi2.png')","url":"https:\/\/fanyi.baidu.com\/?#zh\/en\/"},{"id":20,"name":"\u5934\u6761\u641c\u7d22","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/toutiao2.png')","url":"https:\/\/so.toutiao.com\/search?dvpf=pc&source=input&keyword="},{"id":15,"name":"\u4e91\u97f3\u4e50","img":"url('https:\/\/cdn.miguyu.com\/imgs\/svgi\/yunyinyue.svg')","url":"https:\/\/music.163.com\/#\/search\/m\/?s="},{"id":17,"name":"\u5fae\u535a","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/weibo2.png')","url":"https:\/\/s.weibo.com\/weibo?q="},{"id":12,"name":"\u7231\u5947\u827a","img":"url('https:\/\/cdn.miguyu.com\/imgs\/svgi\/iqiyi.svg')","url":"https:\/\/so.iqiyi.com\/so\/q_"},{"id":19,"name":"Github","img":"url('https:\/\/cdn.miguyu.com\/imgs\/svgi\/github.svg')","url":"https:\/\/github.com\/search?q="},{"id":11,"name":"\u767e\u5ea6\u56fe\u7247","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/baidupic2.png')","url":"https:\/\/image.baidu.com\/search\/index?tn=baiduimage&word="},{"id":22,"name":"\u77e5\u7f51","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/cnki2.png')","url":"https:\/\/kns.cnki.net\/KNS8\/DefaultResult\/Index?dbcode=SCDB&kw="},{"id":7,"name":"Yandex","img":"url('https:\/\/cdn.miguyu.com\/statics\/search\/yandex.png')","url":"https:\/\/yandex.com\/search\/?text="},{"id":23,"name":"\u5fae\u4fe1","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/weixin2.png')","url":"https:\/\/weixin.sogou.com\/weixin?type=2&s_from=input&query="},{"id":21,"name":"\u817e\u8baf\u89c6\u9891","img":"url('https:\/\/cdn.miguyu.com\/statics\/search2\/qqv2.png')","url":"https:\/\/v.qq.com\/x\/search\/?q="}];
+    var hotInfos = [{"id":102,"title":"\u5fae\u535a","subtitle":"\u70ed\u641c\u699c","logo":"https:\/\/cdn.miguyu.com\/imgs\/icon\/weibo.png","type":1,"status":1},{"id":101,"title":"\u767e\u5ea6","subtitle":"\u70ed\u70b9","logo":"https:\/\/cdn.miguyu.com\/statics\/search2\/baidu2.png","type":1,"status":1},{"id":103,"title":"\u77e5\u4e4e","subtitle":"\u70ed\u5ea6\u699c","logo":"https:\/\/cdn.miguyu.com\/imgs\/icon\/zhihu.png","type":1,"status":1},{"id":104,"title":"B\u7ad9","subtitle":"\u5168\u7ad9\u65e5\u699c","logo":"https:\/\/cdn.miguyu.com\/imgs\/icon\/bilibili.png","type":2,"status":1},{"id":105,"title":"\u6296\u97f3","subtitle":"\u70ed\u70b9\u699c","logo":"https:\/\/cdn.miguyu.com\/imgs\/icon\/douyin6789.png","type":2,"status":1},{"id":106,"title":"\u5fae\u4fe1","subtitle":"24\u5c0f\u65f6\u70ed\u6587","logo":"https:\/\/cdn.miguyu.com\/imgs\/icon\/weixin.png","type":1,"status":0},{"id":107,"title":"36\u6c2a","subtitle":"24\u5c0f\u65f6\u70ed\u699c","logo":"https:\/\/cdn.miguyu.com\/imgs\/icon\/36kr.png","type":4,"status":1},{"id":108,"title":"\u8c46\u74e3","subtitle":"\u7535\u5f71\u699c","logo":"https:\/\/cdn.miguyu.com\/imgs\/icon\/doubandy.png","type":3,"status":1},{"id":109,"title":"\u767e\u5ea6\u8d34\u5427","subtitle":"\u70ed\u8bae\u699c","logo":"https:\/\/cdn.miguyu.com\/imgs\/icon\/tieba.png","type":3,"status":1},{"id":110,"title":"\u864e\u6251","subtitle":"\u6b65\u884c\u8857\u70ed\u5e16","logo":"https:\/\/cdn.miguyu.com\/imgs\/icon\/hupu.png","type":3,"status":1},{"id":111,"title":"\u5c11\u6570\u6d3e","subtitle":"\u70ed\u95e8\u6587\u7ae0","logo":"https:\/\/cdn.miguyu.com\/imgs\/icon\/shaoshupai.png","type":4,"status":1},{"id":112,"title":"\u543e\u7231\u7834\u89e3","subtitle":"\u5168\u7ad9\u65e5\u699c","logo":"https:\/\/cdn.miguyu.com\/imgs\/icon\/wuaipojie6.png","type":4,"status":1},{"id":113,"title":"\u5386\u53f2\u4e0a\u7684\u4eca\u5929","subtitle":"","logo":"https:\/\/cdn.miguyu.com\/imgs\/icon\/histoday6.png","type":3,"status":1},{"id":114,"title":"\u4eca\u65e5\u5934\u6761","subtitle":"\u70ed\u699c","logo":"https:\/\/cdn.miguyu.com\/statics\/search2\/toutiao2.png","type":3,"status":0},{"id":115,"title":"\u767e\u5ea6","subtitle":"\u70ed\u70b9","logo":"https:\/\/cdn.miguyu.com\/statics\/search2\/baidu2.png","type":8,"status":0},{"id":116,"title":"IT\u4e4b\u5bb6","subtitle":"\u70ed\u699c","logo":"https:\/\/cdn.miguyu.com\/imgs\/icon\/ithome.png","type":8,"status":0},{"id":117,"title":"\u767e\u5ea6\u70ed\u70b9","subtitle":"","logo":"https:\/\/cdn.miguyu.com\/statics\/search2\/baidu2.png","type":8,"status":0},{"id":118,"title":"\u767e\u5ea6\u70ed\u70b9","subtitle":"","logo":"https:\/\/cdn.miguyu.com\/statics\/search2\/baidu2.png","type":8,"status":0},{"id":119,"title":"\u767e\u5ea6\u70ed\u70b9","subtitle":"","logo":"https:\/\/cdn.miguyu.com\/statics\/search2\/baidu2.png","type":8,"status":0},{"id":120,"title":"\u767e\u5ea6\u70ed\u70b9","subtitle":"","logo":"https:\/\/cdn.miguyu.com\/statics\/search2\/baidu2.png","type":8,"status":0},{"id":121,"title":"\u767e\u5ea6\u70ed\u70b9","subtitle":"","logo":"https:\/\/cdn.miguyu.com\/statics\/search2\/baidu2.png","type":8,"status":0}];
+    var hotSrcArr = [101,102,103,104,105,113,107,108,109,110,111,112];
+    var hotMyArr = [101,102,103];
+    var hotMyTmpArr = [];
+
+    </script>
+    
+
+
+    <script type="text/javascript" src="https://cdn.miguyu.com/statics/js/slidercust/slideverify.js"></script>
+    <script type="text/javascript" src="https://cdn.miguyu.com/statics/js/jscolor/jscolor2.js"></script>
+    <script type="text/javascript" src="https://cdn.miguyu.com/statics/js/formvalidator.js"></script>
+    <script type="text/javascript" src="https://cdn.miguyu.com/statics/js/zui.min.js"></script>
+
+
+    <script>
+        var my_hot_lists = {'101':'','102':'','103':'','104':'','105':'','106':'','107':'','108':'','109':'','110':'','111':'','112':'','113':'','114':'','115':'','116':'','117':'','118':'','119':'','120':''};
+        var my_hot_s_time = new Date();
+        var my_wea_now ={"air_now_city":{"aqi":"44","qlty":"优"},
+            "rain":{"txt":"未来两小时无降水"},
+            "now":{"temp":"15","cond-icon":"101","text":"多云","windD":"西南风","windJ":"3","windV":"14","hum":"46","precip":"0.0","pressure":"1025"}};
+    </script>
+
+
+            <script type="text/javascript" src="https://cdn.miguyu.com/statics/js/myjs/TEST0003wqr11X2401.min.js?v=0.2.5.2.1"></script>
+        <script type="text/javascript" src="https://cdn.miguyu.com/statics/js/myjs/TEST0105neY88A2401.min.js?v=0.2.5.0.2"></script>
+    <script type="text/javascript" src="https://cdn.miguyu.com/statics/js/myjs/TEST0126bzX66B2312.min.js?v=0.2.5.4.0"></script>
+    <script type="text/javascript" src="https://cdn.miguyu.com/statics/js/myjs/TEST0309XDf29C2304.min.js?v=0.2.5.0.1"></script>
+    <script type="text/javascript" src="https://cdn.miguyu.com/statics/js/myjs/TEST0407Bag53D2304.min.js?v=0.2.5.2.2"></script>
+    
+    <script>
+        WIDGET = {
+            "CONFIG": {
+                "modules": "1024",
+                "background": "5",
+                "tmpColor": "434343",
+                "tmpSize": "16",
+                "cityColor": "434343",
+                "citySize": "16",
+                "aqiColor": "434343",
+                "aqiSize": "16",
+                "weatherIconSize": "20",
+                "alertIconSize": "16",
+                "padding": "10px 0px 0px 4px",
+                "shadow": "1",
+                "language": "auto",
+                "fixed": "false",
+                "vertical": "top",
+                "horizontal": "left",
+                "key": "9628630a9ac448da8ed6721ea9da783a"
+            }
+        }
+    </script>
+
+
+
+
+            <script type="text/javascript" src="https://cdn.miguyu.com/statics/js/myjs/TEST0207pcB09abXX2401g.min.js?v=0.2.5.4.0"></script>
+        
+    <script>
+        var swiOutTime = 300;
+        $('#search').mouseenter(function() {
+            clearTimeout(swiOutTime);
+            swiOutTime = setTimeout(function(){
+            if ($('#search').css('opacity') < 1){
+                    $('#search').css('opacity',1);
+                }
+            },300);
+        });
+        $('#search').mouseleave(function() {
+            clearTimeout(swiOutTime);
+            swiOutTime = setTimeout(function(){
+                if ($('#box').css('display') == 'block' || $('.search-engine').css('display') == 'block'){
+                    $('#search').css('opacity',1);
+                }else{
+                    $('#search').css('opacity',cur_opacity);
+                }
+            },300);
+        });
+    </script>
+
+        <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?9a803bed0547c0e2129506732f85002b";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+
+
+        <script src="https://cdn.miguyu.com/statics/js/myjs/he-simple-common.js?v=2.0.0.2"></script>
+        </body>
+    </html>
