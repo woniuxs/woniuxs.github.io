@@ -191,7 +191,7 @@
     },
     {
       "key": "csp_SP33",
-      "name": "📺三三┃解析",
+      "name": "📺蜗牛┃解析",
       "type": 3,
       "api": "csp_SP33",
       "searchable": 1,
@@ -607,7 +607,7 @@
     {
       "name": "蜗牛解析",
       "type": 1,
-      "url": "http://api.888484.xyz/神秘哥哥/super.php?v=",
+      "url": "https://jx.777jiexi.com/player/?url=",
       "ext": {
         "flag": [
           "qq",
