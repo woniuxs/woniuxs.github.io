@@ -4,7 +4,7 @@
   "sites": [
     {
       "key": "豆豆",
-      "name": "🌕蜗牛影视🐌",
+      "name": "🌕晓晓影视💭",
       "type": 3,
       "api": "csp_DouDou",
       "searchable": 0,
@@ -191,7 +191,7 @@
     },
     {
       "key": "csp_SP33",
-      "name": "📺蜗牛┃解析",
+      "name": "📺晓晓┃解析",
       "type": 3,
       "api": "csp_SP33",
       "searchable": 1,
@@ -605,7 +605,7 @@
       "url": "Demo"
     },
     {
-      "name": "蜗牛先生",
+      "name": "晓晓解析",
       "type": 1,
       "url": "http://json.84jia.com/home/api?type=ys&uid=335253&key=demprsyzBMQRVY0234&url=",
       "ext": {
