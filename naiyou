@@ -4,7 +4,7 @@
   "sites": [
     {
       "key": "豆豆",
-      "name": "🌕公众号【蜗牛科技仓】",
+      "name": "公众号【蜗牛科技仓】",
       "type": 3,
       "api": "csp_DouDou",
       "searchable": 0,
@@ -217,7 +217,7 @@
     },
     {
       "key": "SP33",
-      "name": "📺三三┃解析",
+      "name": "📺蜗牛┃解析",
       "type": 3,
       "api": "csp_SP33",
       "searchable": 1,
@@ -605,7 +605,7 @@
     },
     {
       "key": "fan",
-      "name": "导航 https://饭太硬.top",
+      "name": "蜗牛提醒⏰",
       "type": 3,
       "api": "csp_XPath",
       "searchable": 1,
@@ -629,7 +629,7 @@
       "url": "Demo"
     },
     {
-      "name": "神秘的哥哥们",
+      "name": "蜗牛影视",
       "type": 1,
       "url": "http://api.888484.xyz/神秘哥哥/super.php?v=",
       "ext": {
@@ -863,7 +863,7 @@
     {
       "name": "SAO0",
       "type": 0,
-      "url": "https://mirror.ghproxy.com/raw.githubusercontent.com/dxawi/0/main/tvlive.txt",
+      "url": "https://tvbox.woniuxs.link/TV/twlive.txt",
       "playerType": 1,
       "ua": "okhttp/3.15",
       "epg": "http://epg.112114.xyz/?ch={name}&date={date}",
