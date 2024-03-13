@@ -158,7 +158,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 1,
-      "ext": "./lib/nmys.json"
+      "ext": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/nmys.json"
     },
     {
       "key": "csp_Bttoo",
@@ -207,8 +207,8 @@
       "quickSearch": 1,
       "changeable": 1,
       "playerType": "1",
-      "api": "./lib/drpy2.min.js",
-      "ext": "./lib/jp.js"
+      "api": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/drpy2.min.js",
+      "ext": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/jp.js"
     },
     {
       "key": "新6V",
@@ -272,8 +272,8 @@
       "key": "Jrsjs",
       "name": "⚽ Jrs┃球迷",
       "type": 3,
-      "api": "./lib/drpy2.min.js",
-      "ext": "./lib/jrk.js",
+      "api": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/drpy2.min.js",
+      "ext": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/jrk.js",
       "style": {
         "type": "list"
       },
@@ -285,8 +285,8 @@
       "key": "310js",
       "name": "⚽310┃看球",
       "type": 3,
-      "api": "./lib/drpy2.min.js",
-      "ext": "./lib/310直播.js",
+      "api": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/drpy2.min.js",
+      "ext": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/310直播.js",
       "style": {
         "type": "list"
       },
@@ -305,14 +305,14 @@
       "searchable": 0,
       "quickSearch": 0,
       "changeable": 0,
-      "ext": "./lib/企鹅直播.json"
+      "ext": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/企鹅直播.json"
     },
     {
       "key": "酷奇js",
       "name": "🎤酷奇┃MV",
       "type": 3,
-      "api": "./lib/drpy2.min.js",
-      "ext": "./lib/酷奇MV.js",
+      "api": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/drpy2.min.js",
+      "ext": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/酷奇MV.js",
       "style": {
         "type": "rect",
         "ratio": 1.597
@@ -333,7 +333,7 @@
       "searchable": 0,
       "quickSearch": 0,
       "changeable": 0,
-      "ext": "./lib/MTV.json"
+      "ext": "https://agit.ai/fantaiying/fty/raw/branch/master/ext//MTV.json"
     },
     {
       "key": "短剧",
@@ -359,8 +359,8 @@
       "key": "虎牙直播js",
       "name": "🐯虎牙┃直播",
       "type": 3,
-      "api": "./lib/drpy2.min.js",
-      "ext": "./lib/huya2.js",
+      "api": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/drpy2.min.js",
+      "ext": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/huya2.js",
       "style": {
         "type": "rect",
         "ratio": 1.755
@@ -374,8 +374,8 @@
       "key": "斗鱼js",
       "name": "🐟斗鱼┃直播",
       "type": 3,
-      "api": "./lib/drpy2.min.js",
-      "ext": "./lib/斗鱼直播.js",
+      "api": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/drpy2.min.js",
+      "ext": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/斗鱼直播.js",
       "style": {
         "type": "rect",
         "ratio": 1.755
@@ -399,8 +399,8 @@
       "key": "有声小说js",
       "name": "🎧有声┃小说",
       "type": 3,
-      "api": "./lib/drpy2.min.js",
-      "ext": "./lib/有声小说吧.js",
+      "api": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/drpy2.min.js",
+      "ext": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/有声小说吧.js",
       "style": {
         "type": "rect",
         "ratio": 1
@@ -493,7 +493,7 @@
       "searchable": 1,
       "quickSearch": 0,
       "changeable": 0,
-      "ext": "./lib/bilibili.json"
+      "ext": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/bilibili.json"
     },
     {
       "key": "Biliych",
@@ -507,14 +507,14 @@
       "searchable": 1,
       "quickSearch": 0,
       "changeable": 0,
-      "ext": "./lib/biliych.json"
+      "ext": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/biliych.json"
     },
     {
       "key": "dr_兔小贝",
       "name": "📚儿童┃启蒙",
       "type": 3,
-      "api": "./lib/drpy2.min.js",
-      "ext": "./lib/兔小贝.js",
+      "api": "https://agit.ai/fantaiying/fty/raw/branch/master/ext//drpy2.min.js",
+      "ext": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/兔小贝.js",
       "style": {
         "type": "rect",
         "ratio": 1.597
@@ -535,7 +535,7 @@
       "searchable": 0,
       "quickSearch": 0,
       "changeable": 0,
-      "ext": "./lib/少儿教育.json"
+      "ext": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/少儿教育.json"
     },
     {
       "key": "小学课堂",
@@ -549,7 +549,7 @@
       "searchable": 0,
       "quickSearch": 0,
       "changeable": 0,
-      "ext": "./lib/小学课堂.json"
+      "ext": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/小学课堂.json"
     },
     {
       "key": "初中课堂",
@@ -563,7 +563,7 @@
       "searchable": 0,
       "quickSearch": 0,
       "changeable": 0,
-      "ext": "./lib/初中课堂.json"
+      "ext": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/初中课堂.json"
     },
     {
       "key": "高中教育",
@@ -577,7 +577,7 @@
       "searchable": 0,
       "quickSearch": 0,
       "changeable": 0,
-      "ext": "./lib/高中课堂.json"
+      "ext": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/高中课堂.json"
     },
     {
       "key": "Nbys",
@@ -838,7 +838,7 @@
     {
       "name": "SAO0",
       "type": 0,
-      "url": "https://tvbox.woniuxs.link/TV/twlive.txt",
+      "url": "https://mirror.ghproxy.com/raw.githubusercontent.com/dxawi/0/main/tvlive.txt",
       "playerType": 1,
       "ua": "okhttp/3.15",
       "epg": "http://epg.112114.xyz/?ch={name}&date={date}",
