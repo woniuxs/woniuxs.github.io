@@ -6,7 +6,7 @@
     "sites": [
         {
             "key": "豆豆",
-            "name": "🌕豆瓣【公众号：天微科技】",
+            "name": "🌕豆瓣【公众号：蜗牛科技仓】",
             "type": 3,
             "api": "csp_DouDou",
             "searchable": 0,
@@ -601,7 +601,7 @@
         },
         {
             "key": "fan",
-            "name": "导航 https://饭太硬.top",
+            "name": "蜗牛提醒",
             "type": 3,
             "api": "csp_XPath",
             "searchable": 1,
@@ -625,7 +625,7 @@
             "url": "Demo"
         },
         {
-            "name": "神秘的哥哥们",
+            "name": "蜗牛科技仓",
             "type": 1,
             "url": "http://api.888484.xyz/神秘哥哥/super.php?v=",
             "ext": {
