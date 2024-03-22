@@ -1,35 +1,68 @@
-{"urls": [
-
-{"url": "https://jihulab.com/woniuxs/box/-/raw/main/fty.json","name": "💌蜗牛影视🚀"},
-
-{"url": "https://tvbox.woniuxs.link/tv/fty.json","name": "💗本接口由《蜗牛先生》整理💗"},
-
-{"url": "https://tvbox.woniuxs.link/tv/jx.json","name": "💗免费接口-禁止贩卖💗"},
-
-{"url": "https://tvbox.woniuxs.link/naiyou","name": "🐌蜗牛备用①线路"},
-
-{"url": "https://tvbox.woniuxs.link/TV/feimao.json","name": "🐌蜗牛备用②线路"},
-  
-{"url": "https://tvbox.woniuxs.link/tv/xxys.json","name": "🍄晓晓线路"},
-  
-{"url": "http://39.101.135.137:8080","name": "🎯小白龙线路"}, 
-
-{"url": "http://ztha.top/TVBox/thdjk.json","name": "📛挺好线路"},
-
-{"url": "http://qrh.yimkj.cn/qrh/千软汇.json","name": "✨千软汇线路"},
-
-{"url": "http://饭太硬.top/tv","name": "🍚饭太硬线路"},
-
-{"url": "http://肥猫.live","name": "🐱肥猫线路"},
-
-{"url": "https://cf.weixine.net/ysc.json","name": "🚚运输车线路"},
-
-{"url": "http://rihou.cc:88/荷城茶秀","name": "📱荷城茶秀线路"},
-
-{"url": "http://我不是.摸鱼儿.top","name": "🐟摸鱼线路"},
-
-{"url": "https://tvbox.woniuxs.dynv6.net/蜗牛","name": "公众号丨蜗牛科技仓"}
-
-]
-
+{
+  "urls": [
+    {
+      "url": "https://tvbox.woniuxs.dynv6.net/fty",
+      "name": "💌蜗牛影视🚀"
+    },
+    {
+      "url": "https://tvbox.woniuxs.link/tv/fty.json",
+      "name": "💗本接口由《蜗牛先生》整理💗"
+    },
+    {
+      "url": "https://tvbox.woniuxs.link/tv/jx.json",
+      "name": "💗免费接口-禁止贩卖💗"
+    },
+    {
+      "url": "https://tvbox.woniuxs.link/naiyou",
+      "name": "🐌蜗牛备用①线路"
+    },
+    {
+      "url": "https://tvbox.woniuxs.link/tv/feimao.json",
+      "name": "🐌蜗牛备用②线路"
+    },
+    {
+      "url": "https://tvbox.woniuxs.link/tv/twjx.json",
+      "name": "🐌蜗牛备用③线路"
+    },
+    {
+      "url": "https://tvbox.woniuxs.link/tv/xxys.json",
+      "name": "🍄晓晓线路"
+    },
+    {
+      "url": "http://39.101.135.137:8080",
+      "name": "🎯小白龙线路"
+    },
+    {
+      "url": "http://ztha.top/TVBox/thdjk.json",
+      "name": "📛挺好线路"
+    },
+    {
+      "url": "http://qrh.yimkj.cn/qrh/千软汇.json",
+      "name": "✨千软汇线路"
+    },
+    {
+      "url": "http://饭太硬.top/tv",
+      "name": "🍚饭太硬线路"
+    },
+    {
+      "url": "http://肥猫.live",
+      "name": "🐱肥猫线路"
+    },
+    {
+      "url": "https://cf.weixine.net/ysc.json",
+      "name": "🚚运输车线路"
+    },
+    {
+      "url": "http://rihou.cc:88/荷城茶秀",
+      "name": "📱荷城茶秀线路"
+    },
+    {
+      "url": "http://我不是.摸鱼儿.top",
+      "name": "🐟摸鱼线路"
+    },
+    {
+      "url": "https://tvbox.woniuxs.dynv6.net/蜗牛",
+      "name": "公众号丨蜗牛科技仓"
+    }
+  ]
 }
