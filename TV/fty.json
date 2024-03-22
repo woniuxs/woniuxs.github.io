@@ -638,7 +638,7 @@
       "type": 2,
       "url": "Sequence"
     },
-        {
+    {
       "name": "蜗牛影视",
       "type": 1,
       "url": "http://121.62.61.51:6888/api/?key=qy9VEMeeqwl3nI4gvA&url=",
@@ -651,7 +651,7 @@
         }
       }
     },
-        {
+    {
       "name": "蜗牛解析",
       "type": 1,
       "url": "http://xiutan.shiyifacai.com/json/qingfeng.php?url=",
