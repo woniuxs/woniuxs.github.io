@@ -29,7 +29,7 @@
       "searchable": 1,
       "filterable": 0,
       "changeable": 0,
-      "jar": "https://jihulab.com/0004/0/-/raw/main/阿里设置.txt"
+      "jar": "./alibaba.jar"
     },
     {
       "key": "玩偶哥哥",
