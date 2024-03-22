@@ -624,10 +624,60 @@
   ],
   "parses": [
     {
-      "name": "聚合",
+      "name": "解析聚合",
       "type": 3,
       "url": "Demo"
     },
+    {
+      "name": "Json并发",
+      "type": 2,
+      "url": "Parallel"
+    },
+    {
+      "name": "Json轮询",
+      "type": 2,
+      "url": "Sequence"
+    },
+        {
+      "name": "蜗牛影视",
+      "type": 1,
+      "url": "http://121.62.61.51:6888/api/?key=qy9VEMeeqwl3nI4gvA&url=",
+      "ext": {
+        "flag": [
+          "NBY"
+        ],
+        "header": {
+          "User-Agent": "okhttp/4.1.0"
+        }
+      }
+    },
+        {
+      "name": "蜗牛解析",
+      "type": 1,
+      "url": "http://xiutan.shiyifacai.com/json/qingfeng.php?url=",
+      "ext": {
+        "flag": [
+          "seven"
+        ],
+        "header": {
+          "User-Agent": "Lavf/58.12.100"
+        }
+      }
+    },
+    {
+      "name": "蜗牛科技",
+      "type": 1,
+      "url": "http://xiutan.shiyifacai.com/json/qingfeng.php?url=",
+      "ext": {
+        "flag": [
+          "seven"
+        ],
+        "header": {
+          "User-Agent": "Lavf/58.12.100"
+        }
+      }
+    }
+  ],
     {
       "name": "蜗牛",
       "type": 1,
