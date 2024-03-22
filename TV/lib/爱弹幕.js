@@ -1,162 +1,59 @@
-<!doctype html>
-<html>
-        <head>
-                    <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-<script type="text/javascript">
-    if (window.location.protocol === 'https:') {
-        let meta = document.createElement('meta');
-        meta.httpEquiv = "Content-Security-Policy";
-        meta.content = "upgrade-insecure-requests";
-        document.getElementsByTagName('head')[0].appendChild(meta);
-    }
-</script>
-<title>AtomGit_开放原子开源基金会代码托管平台</title>
-<meta name="keywords" content="开源项目源代码托管，开源软件项目，开源硬件项目，开源芯片项目，AtomGit，Git">
-<meta name="description" content="AtomGit 是开放原子开源基金会旗下的具有自主核心技术的开源代码托管平台，为开源软件、开源硬件、开源芯片等各类开源项目提供基于 Git 协议的源码托管服务，推动创新资源共建共享。">
-<meta name="viewport" content="width=1280, maximum-scale=2.0, user-scalable=yes"/>
-
-<link rel="shortcut icon" href="/favicon.ico" type="image/png">
-<link rel="dns-prefetch" href="//g.alicdn.com">
-
-<style>
-    :root {
-        --highlight-brand: #f2fbff;
-        --bright-brand: #ccecff;
-        --border-brand: #87d2ff;
-        --primary-brand: #1b9aee;
-        --hover-brand: #0171c2;
-        --click-brand: #004f8a;
-        --heavy-brand: #002e52;
-        --color-brand1-10: #000F33 !important;
-        --color-brand1-9: #001E66 !important;
-        --color-brand1-8: #002C99 !important;
-        --color-brand1-7: #0034B3 !important;
-        --color-brand1-6: #215AE5 !important;
-        --color-brand1-5: #4077FF !important;
-        --color-brand1-4: #6699FF !important;
-        --color-brand1-3: #BFD4FF !important;
-        --color-brand1-2: #D9E5FF !important;
-        --color-brand1-1: #F0F6FF !important;
-    }
-</style>
-<script src=https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/public/i18n/0.0.5/codeup-assets_develop.json?timestamp=1711094905500"></script>
-
-<link rel="stylesheet" href="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/public/yunxiao-fe/teamix-ui/1.5.3/style/style/yunxiao-v5.min.css" />
-<link rel="stylesheet" href="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/public/ais-fed/navigation-sdk/2.2.69/next-indexWithoutTeamixUI.css" />
-        <link rel="stylesheet" href="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/ais-fed/code-assets/5.0.43-o/index.css?timestamp=1711094905500">
-                </head>
-    <body>
-                    
-<script src="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/lib/1.0.0/yunxiao-libs.min.js" nonce=""></script>
-
-<div id="container"></div>
-
-<script src="https://openatom.cn/trivial-services/stats/index/entry?id=1&auto=no"></script>
-<script src="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/public/yunxiao-fe/teamix-ui/1.5.3/dist/dist/teamix-ui.min.js" nonce=""></script>
-
-<script src="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/public/ais-fed/navigation-sdk/2.2.69/next-indexWithoutTeamixUI.js" nonce=""></script>
-<script type="text/javascript" nonce="">
-    window.GlobalSetting = {};
-
-    window.config = {
-                    isHomePage: true,
-                appId: '5d76215aa338520001c9e789',
-        orgId: '65d40caa1e41b5e2d5ed3ea7',
-        accessToken: '',
-        needLanguageSwitcher: false,
-        needAccountSetting: false,
-        needUserProfile: true,
-        needUserProfileCodeup: true,
-        needLogin: true,
-        hideAppStore: false,
-        hideOrgAdmin: true,
-        lang: 'zh_CN',
-        env: 'opensource'
-    };
-
-    window.UILessConfig = window.config;
-                
-    // 应用自己使用数据
-    window.FORCE = {
-        csrfTokenName: '',
-        csrfToken: '',
-        tenant: 'OPENSOURCE',
-        subRoute: '',
-        env: 'PRODUCTION',
-        assetsVersion: '5.0.0',
-        user: {
-            loginAccount:'',//账号登录名
-            nickname: '',//账号昵称
-            id: '',//账号唯一ID
-            avatar: '',
-            email:  'default_anonymous_user@default_anonymous_user' ,
-            codeUserId: '',
-        },
-        organization: {
-            id: '36219',
-            namespace_id: '37546',
-            organization_id: '65d40caa1e41b5e2d5ed3ea7',
-            path: 'tvkj',
-            user_role: 'GUEST',
-            repo_display_level: '0,20',
-            repo_visibility_level: '0,20',
-            repo_admin_access_visibility_level: '0,20',
-            repo_default_clone_type:'1',
-            is_recycler_enable:'false',
-            backup_enabled:'false',
-            i18n_support:'false',
-            commits_export_support:'false',
-            new_code_review_gray_flag:  true
-        },
-        locale: 'zh_CN',
-        remoteIP: '211.158.53.203',
-        realIpEnable: 'true',
-        recycleDays: '15',
-        pathResource: {},
-        resourceSubject: {},
-        codeReviewDetail: {},
-        assetsName: 'error'
-    };
-
-
-</script>
-
-<script type="text/javascript" nonce="">
-    window.FORCE.pathResource = {
-        type: '',
-        id: '',
-        fullPath: '',
-        fullName: '',
-        role:'',
-        parentId: '',
-        parentType: '',
-        isEmpty: '',
-        defaultBranch: '',
-        isExist: '',
-        isArchive: '',
-        visibilityValue: '',
-        isStar: '',
-        repoSize: '',
-        branchCount: '',
-        commitCount: '',
-        mergeRequestCount: '',
-        tagCount: '',
-        repoLimitSize: ''
-    };
-</script>
-<script type="text/javascript" nonce="">
-
-    window.ERROR = {};
-    window.ERROR.errorMessage = '查询文件内容失败';
-    window.ERROR.errorCode = 'SYSTEM_ERROR';
-    window.ERROR.errorAction = '请稍后重试';
-    window.ERROR.errorTraceId = '';
-
-</script>
-
-
-
-        <script src="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/ais-fed/code-assets/5.0.43-o/index.js?timestamp=1711094905500" nonce=""></script>
-                </body>
-    </html>
+muban.短视2.二级.img = '.detail-pic&&img&&data-src';
+var rule = {
+    title: '爱弹幕',
+    模板:'短视2',
+    host: 'https://anime.girigirilove.com',
+    homeUrl:'/map/',
+    // url:'/show/fyclass--------fypage---/'
+    url: '/show/fyclassfyfilter/',
+    filterable:1,//是否启用分类筛选,
+    filter_url:'-{{fl.area}}-{{fl.by}}-{{fl.class}}-{{fl.lang}}-{{fl.letter}}---fypage---{{fl.year}}',
+    filter: {
+        "2":[{"key":"class","name":"类型","value":[{"n":"全部","v":""},{"n":"喜剧","v":"喜剧"},{"n":"爱情","v":"爱情"},{"n":"恐怖","v":"恐怖"},{"n":"动作","v":"动作"},{"n":"科幻","v":"科幻"},{"n":"剧情","v":"剧情"},{"n":"战争","v":"战争"},{"n":"奇幻","v":"奇幻"},{"n":"冒险","v":"冒险"},{"n":"悬疑","v":"悬疑"},{"n":"校园","v":"校园"},{"n":"后宫","v":"后宫"},{"n":"热血","v":"热血"},{"n":"运动","v":"运动"},{"n":"百合","v":"百合"},{"n":"乙女","v":"乙女"},{"n":"机甲","v":"机甲"},{"n":"日常","v":"日常"},{"n":"魔法少女","v":"魔法少女"},{"n":"异世界","v":"异世界"},{"n":"爱抖露","v":"爱抖露"},{"n":"音乐","v":"音乐"},{"n":"萌","v":"萌"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"一月","v":"一月"},{"n":"四月","v":"四月"},{"n":"七月","v":"七月"},{"n":"十月","v":"十月"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"},{"n":"2004","v":"2004"},{"n":"2003","v":"2003"},{"n":"2002","v":"2002"},{"n":"2001","v":"2001"},{"n":"2000","v":"2000"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"日语","v":"日语"},{"n":"国语","v":"国语"}]},{"key":"by","name":"排序","value":[{"n":"最新","v":"time"},{"n":"最热","v":"hits"},{"n":"评分","v":"score"}]}],
+        "3":[{"key":"class","name":"类型","value":[{"n":"全部","v":""},{"n":"搞笑","v":"搞笑"},{"n":"爱情","v":"爱情"},{"n":"恐怖","v":"恐怖"},{"n":"动作","v":"动作"},{"n":"科幻","v":"科幻"},{"n":"剧情","v":"剧情"},{"n":"战争","v":"战争"},{"n":"奇幻","v":"奇幻"},{"n":"冒险","v":"冒险"},{"n":"悬疑","v":"悬疑"},{"n":"校园","v":"校园"},{"n":"后宫","v":"后宫"},{"n":"热血","v":"热血"},{"n":"运动","v":"运动"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"内地","v":"内地"},{"n":"港台","v":"港台"},{"n":"日韩","v":"日韩"},{"n":"欧美","v":"欧美"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"},{"n":"2004","v":"2004"},{"n":"2003","v":"2003"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"国语","v":"国语"},{"n":"英语","v":"英语"}]},{"key":"by","name":"排序","value":[{"n":"最新","v":"time"},{"n":"最热","v":"hits"},{"n":"评分","v":"score"}]}],
+        "21":[{"key":"class","name":"类型","value":[{"n":"全部","v":""},{"n":"喜剧","v":"喜剧"},{"n":"爱情","v":"爱情"},{"n":"恐怖","v":"恐怖"},{"n":"动作","v":"动作"},{"n":"科幻","v":"科幻"},{"n":"剧情","v":"剧情"},{"n":"战争","v":"战争"},{"n":"奇幻","v":"奇幻"},{"n":"冒险","v":"冒险"},{"n":"悬疑","v":"悬疑"},{"n":"校园","v":"校园"},{"n":"后宫","v":"后宫"},{"n":"热血","v":"热血"},{"n":"运动","v":"运动"},{"n":"百合","v":"百合"},{"n":"耽美","v":"耽美"},{"n":"机甲","v":"机甲"},{"n":"日常","v":"日常"},{"n":"魔法少女","v":"魔法少女"},{"n":"异世界","v":"异世界"},{"n":"爱抖露","v":"爱抖露"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"},{"n":"2004","v":"2004"},{"n":"2003","v":"2003"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"日语","v":"日语"},{"n":"中文","v":"中文"},{"n":"英语","v":"英语"}]},{"key":"by","name":"排序","value":[{"n":"最新","v":"time"},{"n":"最热","v":"hits"},{"n":"评分","v":"score"}]}],
+        "20":[{"key":"class","name":"类型","value":[{"n":"全部","v":""},{"n":"爱情","v":"爱情"},{"n":"科幻","v":"科幻"},{"n":"经典","v":"经典"},{"n":"冒险","v":"冒险"},{"n":"剧情","v":"剧情"},{"n":"动作","v":"动作"},{"n":"同性","v":"同性"},{"n":"喜剧","v":"喜剧"},{"n":"奇幻","v":"奇幻"},{"n":"恐怖","v":"恐怖"},{"n":"悬疑.惊悚","v":"悬疑.惊悚"},{"n":"战争","v":"战争"},{"n":"欧美","v":"欧美"},{"n":"歌舞","v":"歌舞"},{"n":"灾难","v":"灾难"},{"n":"记录.泰剧","v":"记录.泰剧"},{"n":"体育","v":"体育"},{"n":"烧脑","v":"烧脑"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"日本","v":"日本"},{"n":"欧美","v":"欧美"},{"n":"泰国","v":"泰国"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"},{"n":"2004.2003","v":"2004.2003"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"日语","v":"日语"},{"n":"英语","v":"英语"},{"n":"泰语","v":"泰语"}]},{"key":"by","name":"排序","value":[{"n":"最新","v":"time"},{"n":"最热","v":"hits"},{"n":"评分","v":"score"}]}],
+        "24":[{"key":"by","name":"排序","value":[{"n":"最新","v":"time"},{"n":"最热","v":"hits"},{"n":"评分","v":"score"}]}],
+        "26":[{"key":"by","name":"排序","value":[{"n":"最新","v":"time"},{"n":"最热","v":"hits"},{"n":"评分","v":"score"}]}]
+    },
+    searchUrl: '/search/**----------fypage---/',
+    class_name:'日番&美番&劇場版&真人番劇&BD副音軌&其他',
+    class_url:'2&3&21&20&24&26',
+    play_parse:true,
+    lazy:`js:
+        var html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
+        var url = html.url;
+        var from = html.from;
+        var next = html.link_next;
+        if (html.encrypt == '1') {
+            url = unescape(url)
+        } else if (html.encrypt == '2') {
+            url = unescape(base64Decode(url))
+        } else if (html.encrypt == '3') {
+            url = url.substring(8, url.length);
+            url = base64Decode(url);
+            url = url.substring(8, (url.length) - 8)
+        }
+        if (/\\.m3u8|\\.mp4/.test(url)) {
+            input = {
+                jx: 0,
+                url: url,
+                parse: 0
+            }
+        } else {
+            var paurl = request(HOST + '/static/player/' + from + '.js').match(/ src="(.*?)'/)[1];
+            if (/https/.test(paurl)) {
+                var purl = paurl + url + '&next=' + next + '&title=';
+                input = {
+                    jx: 0,
+                    url: purl,
+                    parse: 1
+                }
+            }
+        }
+    `,
+    推荐:'.border-box&&.public-list-box;a&&title;.lazy&&data-src;.public-list-prb&&Text;a&&href',
+    double: false, // 推荐内容是否双层定位
+    一级:'.border-box .public-list-box;a&&title;.lazy&&data-src;.public-list-prb&&Text;a&&href',
+    搜索:'.row-right&&.search-box;.thumb-txt&&Text;.lazy&&data-src;.public-list-prb&&Text;a&&href',
+}

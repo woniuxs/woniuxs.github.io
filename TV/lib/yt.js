@@ -1,162 +1,228 @@
-<!doctype html>
-<html>
-        <head>
-                    <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-<script type="text/javascript">
-    if (window.location.protocol === 'https:') {
-        let meta = document.createElement('meta');
-        meta.httpEquiv = "Content-Security-Policy";
-        meta.content = "upgrade-insecure-requests";
-        document.getElementsByTagName('head')[0].appendChild(meta);
-    }
-</script>
-<title>AtomGit_开放原子开源基金会代码托管平台</title>
-<meta name="keywords" content="开源项目源代码托管，开源软件项目，开源硬件项目，开源芯片项目，AtomGit，Git">
-<meta name="description" content="AtomGit 是开放原子开源基金会旗下的具有自主核心技术的开源代码托管平台，为开源软件、开源硬件、开源芯片等各类开源项目提供基于 Git 协议的源码托管服务，推动创新资源共建共享。">
-<meta name="viewport" content="width=1280, maximum-scale=2.0, user-scalable=yes"/>
-
-<link rel="shortcut icon" href="/favicon.ico" type="image/png">
-<link rel="dns-prefetch" href="//g.alicdn.com">
-
-<style>
-    :root {
-        --highlight-brand: #f2fbff;
-        --bright-brand: #ccecff;
-        --border-brand: #87d2ff;
-        --primary-brand: #1b9aee;
-        --hover-brand: #0171c2;
-        --click-brand: #004f8a;
-        --heavy-brand: #002e52;
-        --color-brand1-10: #000F33 !important;
-        --color-brand1-9: #001E66 !important;
-        --color-brand1-8: #002C99 !important;
-        --color-brand1-7: #0034B3 !important;
-        --color-brand1-6: #215AE5 !important;
-        --color-brand1-5: #4077FF !important;
-        --color-brand1-4: #6699FF !important;
-        --color-brand1-3: #BFD4FF !important;
-        --color-brand1-2: #D9E5FF !important;
-        --color-brand1-1: #F0F6FF !important;
-    }
-</style>
-<script src=https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/public/i18n/0.0.5/codeup-assets_develop.json?timestamp=1711094905713"></script>
-
-<link rel="stylesheet" href="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/public/yunxiao-fe/teamix-ui/1.5.3/style/style/yunxiao-v5.min.css" />
-<link rel="stylesheet" href="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/public/ais-fed/navigation-sdk/2.2.69/next-indexWithoutTeamixUI.css" />
-        <link rel="stylesheet" href="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/ais-fed/code-assets/5.0.43-o/index.css?timestamp=1711094905713">
-                </head>
-    <body>
-                    
-<script src="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/lib/1.0.0/yunxiao-libs.min.js" nonce=""></script>
-
-<div id="container"></div>
-
-<script src="https://openatom.cn/trivial-services/stats/index/entry?id=1&auto=no"></script>
-<script src="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/public/yunxiao-fe/teamix-ui/1.5.3/dist/dist/teamix-ui.min.js" nonce=""></script>
-
-<script src="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/public/ais-fed/navigation-sdk/2.2.69/next-indexWithoutTeamixUI.js" nonce=""></script>
-<script type="text/javascript" nonce="">
-    window.GlobalSetting = {};
-
-    window.config = {
-                    isHomePage: true,
-                appId: '5d76215aa338520001c9e789',
-        orgId: '65d40caa1e41b5e2d5ed3ea7',
-        accessToken: '',
-        needLanguageSwitcher: false,
-        needAccountSetting: false,
-        needUserProfile: true,
-        needUserProfileCodeup: true,
-        needLogin: true,
-        hideAppStore: false,
-        hideOrgAdmin: true,
-        lang: 'zh_CN',
-        env: 'opensource'
-    };
-
-    window.UILessConfig = window.config;
-                
-    // 应用自己使用数据
-    window.FORCE = {
-        csrfTokenName: '',
-        csrfToken: '',
-        tenant: 'OPENSOURCE',
-        subRoute: '',
-        env: 'PRODUCTION',
-        assetsVersion: '5.0.0',
-        user: {
-            loginAccount:'',//账号登录名
-            nickname: '',//账号昵称
-            id: '',//账号唯一ID
-            avatar: '',
-            email:  'default_anonymous_user@default_anonymous_user' ,
-            codeUserId: '',
-        },
-        organization: {
-            id: '36219',
-            namespace_id: '37546',
-            organization_id: '65d40caa1e41b5e2d5ed3ea7',
-            path: 'tvkj',
-            user_role: 'GUEST',
-            repo_display_level: '0,20',
-            repo_visibility_level: '0,20',
-            repo_admin_access_visibility_level: '0,20',
-            repo_default_clone_type:'1',
-            is_recycler_enable:'false',
-            backup_enabled:'false',
-            i18n_support:'false',
-            commits_export_support:'false',
-            new_code_review_gray_flag:  true
-        },
-        locale: 'zh_CN',
-        remoteIP: '211.158.53.203',
-        realIpEnable: 'true',
-        recycleDays: '15',
-        pathResource: {},
-        resourceSubject: {},
-        codeReviewDetail: {},
-        assetsName: 'error'
-    };
-
-
-</script>
-
-<script type="text/javascript" nonce="">
-    window.FORCE.pathResource = {
-        type: '',
-        id: '',
-        fullPath: '',
-        fullName: '',
-        role:'',
-        parentId: '',
-        parentType: '',
-        isEmpty: '',
-        defaultBranch: '',
-        isExist: '',
-        isArchive: '',
-        visibilityValue: '',
-        isStar: '',
-        repoSize: '',
-        branchCount: '',
-        commitCount: '',
-        mergeRequestCount: '',
-        tagCount: '',
-        repoLimitSize: ''
-    };
-</script>
-<script type="text/javascript" nonce="">
-
-    window.ERROR = {};
-    window.ERROR.errorMessage = '查询文件内容失败';
-    window.ERROR.errorCode = 'SYSTEM_ERROR';
-    window.ERROR.errorAction = '请稍后重试';
-    window.ERROR.errorTraceId = '';
-
-</script>
-
-
-
-        <script src="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/ais-fed/code-assets/5.0.43-o/index.js?timestamp=1711094905713" nonce=""></script>
-                </body>
-    </html>
+var rule = {
+	title: '影探[V2]', // csp_AppYsV2
+	// host: 'http://ytcms.lyyytv.cn/api.php/app/',
+	host: 'http://vipcms.lyyytv.cn/api.php/app/',
+	url: 'video?tid=fyclassfyfilter&limit=20&pg=fypage',
+	filter_url:'&class={{fl.class}}&area={{fl.area}}&lang={{fl.lang}}&letter={{fl.letter}}&year={{fl.year}}&by={{fl.by}}',
+	filter: {
+		"32":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"篮球","v":"篮球"},{"n":"足球","v":"足球"},{"n":"网球","v":"网球"},{"n":"斯洛克","v":"斯洛克"}]}],
+		"20":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"喜剧","v":"喜剧"},{"n":"爱情","v":"爱情"},{"n":"恐怖","v":"恐怖"},{"n":"动作","v":"动作"},{"n":"科幻","v":"科幻"},{"n":"剧情","v":"剧情"},{"n":"战争","v":"战争"},{"n":"警匪","v":"警匪"},{"n":"犯罪","v":"犯罪"},{"n":"武侠","v":"武侠"},{"n":"冒险","v":"冒险"},{"n":"枪战","v":"枪战"},{"n":"恐怖","v":"恐怖"},{"n":"悬疑","v":"悬疑"},{"n":"惊悚","v":"惊悚"},{"n":"青春","v":"青春"},{"n":"文艺","v":"文艺"},{"n":"古装","v":"古装"},{"n":"历史","v":"历史"},{"n":"运动","v":"运动"},{"n":"农村","v":"农村"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"大陆","v":"大陆"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"美国","v":"美国"},{"n":"日本","v":"日本"},{"n":"韩国","v":"韩国"},{"n":"泰国","v":"泰国"},{"n":"印度","v":"印度"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"国语","v":"国语"},{"n":"英语","v":"英语"},{"n":"粤语","v":"粤语"},{"n":"闽南语","v":"闽南语"},{"n":"韩语","v":"韩语"},{"n":"日语","v":"日语"},{"n":"其它","v":"其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]}],
+		"21":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"古装","v":"古装"},{"n":"战争","v":"战争"},{"n":"青春偶像","v":"青春偶像"},{"n":"喜剧","v":"喜剧"},{"n":"家庭","v":"家庭"},{"n":"犯罪","v":"犯罪"},{"n":"动作","v":"动作"},{"n":"奇幻","v":"奇幻"},{"n":"剧情","v":"剧情"},{"n":"历史","v":"历史"},{"n":"经典","v":"经典"},{"n":"乡村","v":"乡村"},{"n":"情景","v":"情景"},{"n":"商战","v":"商战"},{"n":"网剧","v":"网剧"},{"n":"其他","v":"其他"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"内地","v":"内地"},{"n":"韩国","v":"韩国"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"日本","v":"日本"},{"n":"美国","v":"美国"},{"n":"泰国","v":"泰国"},{"n":"英国","v":"英国"},{"n":"新加坡","v":"新加坡"},{"n":"其他","v":"其他"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"国语","v":"国语"},{"n":"英语","v":"英语"},{"n":"粤语","v":"粤语"},{"n":"闽南语","v":"闽南语"},{"n":"韩语","v":"韩语"},{"n":"日语","v":"日语"},{"n":"其它","v":"其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"},{"n":"2004","v":"2004"}]}],
+		"47":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"喜剧","v":"喜剧"},{"n":"爱情","v":"爱情"},{"n":"恐怖","v":"恐怖"},{"n":"动作","v":"动作"},{"n":"科幻","v":"科幻"},{"n":"剧情","v":"剧情"},{"n":"战争","v":"战争"},{"n":"警匪","v":"警匪"},{"n":"犯罪","v":"犯罪"},{"n":"武侠","v":"武侠"},{"n":"冒险","v":"冒险"},{"n":"枪战","v":"枪战"},{"n":"恐怖","v":"恐怖"},{"n":"悬疑","v":"悬疑"},{"n":"惊悚","v":"惊悚"},{"n":"青春","v":"青春"},{"n":"文艺","v":"文艺"},{"n":"古装","v":"古装"},{"n":"历史","v":"历史"},{"n":"运动","v":"运动"},{"n":"农村","v":"农村"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"大陆","v":"大陆"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"美国","v":"美国"},{"n":"日本","v":"日本"},{"n":"韩国","v":"韩国"},{"n":"泰国","v":"泰国"},{"n":"印度","v":"印度"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"国语","v":"国语"},{"n":"英语","v":"英语"},{"n":"粤语","v":"粤语"},{"n":"闽南语","v":"闽南语"},{"n":"韩语","v":"韩语"},{"n":"日语","v":"日语"},{"n":"其它","v":"其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]}],
+		"48":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"喜剧","v":"喜剧"},{"n":"爱情","v":"爱情"},{"n":"恐怖","v":"恐怖"},{"n":"动作","v":"动作"},{"n":"科幻","v":"科幻"},{"n":"剧情","v":"剧情"},{"n":"战争","v":"战争"},{"n":"警匪","v":"警匪"},{"n":"犯罪","v":"犯罪"},{"n":"武侠","v":"武侠"},{"n":"冒险","v":"冒险"},{"n":"枪战","v":"枪战"},{"n":"恐怖","v":"恐怖"},{"n":"悬疑","v":"悬疑"},{"n":"惊悚","v":"惊悚"},{"n":"青春","v":"青春"},{"n":"文艺","v":"文艺"},{"n":"古装","v":"古装"},{"n":"历史","v":"历史"},{"n":"运动","v":"运动"},{"n":"农村","v":"农村"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"大陆","v":"大陆"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"美国","v":"美国"},{"n":"日本","v":"日本"},{"n":"韩国","v":"韩国"},{"n":"泰国","v":"泰国"},{"n":"印度","v":"印度"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"国语","v":"国语"},{"n":"英语","v":"英语"},{"n":"粤语","v":"粤语"},{"n":"闽南语","v":"闽南语"},{"n":"韩语","v":"韩语"},{"n":"日语","v":"日语"},{"n":"其它","v":"其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]}],
+		"50":[{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]}],
+		"46":[{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]}],
+		"53":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"古装","v":"古装"},{"n":"战争","v":"战争"},{"n":"青春偶像","v":"青春偶像"},{"n":"喜剧","v":"喜剧"},{"n":"家庭","v":"家庭"},{"n":"犯罪","v":"犯罪"},{"n":"动作","v":"动作"},{"n":"奇幻","v":"奇幻"},{"n":"剧情","v":"剧情"},{"n":"历史","v":"历史"},{"n":"经典","v":"经典"},{"n":"乡村","v":"乡村"},{"n":"情景","v":"情景"},{"n":"商战","v":"商战"},{"n":"网剧","v":"网剧"},{"n":"其他","v":"其他"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"内地","v":"内地"},{"n":"韩国","v":"韩国"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"日本","v":"日本"},{"n":"美国","v":"美国"},{"n":"泰国","v":"泰国"},{"n":"英国","v":"英国"},{"n":"新加坡","v":"新加坡"},{"n":"其他","v":"其他"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"国语","v":"国语"},{"n":"英语","v":"英语"},{"n":"粤语","v":"粤语"},{"n":"闽南语","v":"闽南语"},{"n":"韩语","v":"韩语"},{"n":"日语","v":"日语"},{"n":"其它","v":"其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]}],
+		"58":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"情感","v":"情感"},{"n":"科幻","v":"科幻"},{"n":"热血","v":"热血"},{"n":"推理","v":"推理"},{"n":"搞笑","v":"搞笑"},{"n":"冒险","v":"冒险"},{"n":"萝莉","v":"萝莉"},{"n":"校园","v":"校园"},{"n":"动作","v":"动作"},{"n":"机战","v":"机战"},{"n":"运动","v":"运动"},{"n":"战争","v":"战争"},{"n":"少年","v":"少年"},{"n":"少女","v":"少女"},{"n":"社会","v":"社会"},{"n":"原创","v":"原创"},{"n":"亲子","v":"亲子"},{"n":"益智","v":"益智"},{"n":"励志","v":"励志"},{"n":"其他","v":"其他"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"内地","v":"内地"},{"n":"韩国","v":"韩国"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"日本","v":"日本"},{"n":"美国","v":"美国"},{"n":"泰国","v":"泰国"},{"n":"英国","v":"英国"},{"n":"新加坡","v":"新加坡"},{"n":"其他","v":"其他"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"国语","v":"国语"},{"n":"英语","v":"英语"},{"n":"粤语","v":"粤语"},{"n":"闽南语","v":"闽南语"},{"n":"韩语","v":"韩语"},{"n":"日语","v":"日语"},{"n":"其它","v":"其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]}],
+		"5":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"喜剧","v":"喜剧"},{"n":"爱情","v":"爱情"},{"n":"恐怖","v":"恐怖"},{"n":"动作","v":"动作"},{"n":"科幻","v":"科幻"},{"n":"剧情","v":"剧情"},{"n":"战争","v":"战争"},{"n":"警匪","v":"警匪"},{"n":"犯罪","v":"犯罪"},{"n":"武侠","v":"武侠"},{"n":"冒险","v":"冒险"},{"n":"枪战","v":"枪战"},{"n":"恐怖","v":"恐怖"},{"n":"悬疑","v":"悬疑"},{"n":"惊悚","v":"惊悚"},{"n":"青春","v":"青春"},{"n":"文艺","v":"文艺"},{"n":"古装","v":"古装"},{"n":"历史","v":"历史"},{"n":"运动","v":"运动"},{"n":"农村","v":"农村"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"大陆","v":"大陆"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"美国","v":"美国"},{"n":"日本","v":"日本"},{"n":"韩国","v":"韩国"},{"n":"泰国","v":"泰国"},{"n":"印度","v":"印度"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"国语","v":"国语"},{"n":"英语","v":"英语"},{"n":"粤语","v":"粤语"},{"n":"闽南语","v":"闽南语"},{"n":"韩语","v":"韩语"},{"n":"日语","v":"日语"},{"n":"其它","v":"其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]}],
+		"44":[{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]}],
+		"51":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"喜剧","v":"喜剧"},{"n":"爱情","v":"爱情"},{"n":"恐怖","v":"恐怖"},{"n":"动作","v":"动作"},{"n":"科幻","v":"科幻"},{"n":"剧情","v":"剧情"},{"n":"战争","v":"战争"},{"n":"警匪","v":"警匪"},{"n":"犯罪","v":"犯罪"},{"n":"武侠","v":"武侠"},{"n":"冒险","v":"冒险"},{"n":"枪战","v":"枪战"},{"n":"恐怖","v":"恐怖"},{"n":"悬疑","v":"悬疑"},{"n":"惊悚","v":"惊悚"},{"n":"青春","v":"青春"},{"n":"文艺","v":"文艺"},{"n":"古装","v":"古装"},{"n":"历史","v":"历史"},{"n":"运动","v":"运动"},{"n":"农村","v":"农村"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"国漫","v":"国漫"},{"n":"日本","v":"日本"},{"n":"港台","v":"港台"},{"n":"欧美","v":"欧美"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"国语","v":"国语"},{"n":"英语","v":"英语"},{"n":"粤语","v":"粤语"},{"n":"闽南语","v":"闽南语"},{"n":"韩语","v":"韩语"},{"n":"日语","v":"日语"},{"n":"其它","v":"其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]}],
+		"45":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"喜剧","v":"喜剧"},{"n":"爱情","v":"爱情"},{"n":"恐怖","v":"恐怖"},{"n":"动作","v":"动作"},{"n":"科幻","v":"科幻"},{"n":"剧情","v":"剧情"},{"n":"战争","v":"战争"},{"n":"警匪","v":"警匪"},{"n":"犯罪","v":"犯罪"},{"n":"武侠","v":"武侠"},{"n":"冒险","v":"冒险"},{"n":"枪战","v":"枪战"},{"n":"恐怖","v":"恐怖"},{"n":"悬疑","v":"悬疑"},{"n":"惊悚","v":"惊悚"},{"n":"青春","v":"青春"},{"n":"文艺","v":"文艺"},{"n":"古装","v":"古装"},{"n":"历史","v":"历史"},{"n":"运动","v":"运动"},{"n":"农村","v":"农村"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"大陆","v":"大陆"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"美国","v":"美国"},{"n":"日本","v":"日本"},{"n":"韩国","v":"韩国"},{"n":"泰国","v":"泰国"},{"n":"印度","v":"印度"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"国语","v":"国语"},{"n":"英语","v":"英语"},{"n":"粤语","v":"粤语"},{"n":"闽南语","v":"闽南语"},{"n":"韩语","v":"韩语"},{"n":"日语","v":"日语"},{"n":"其它","v":"其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]}],
+		"52":[{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]}],
+		"4":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"情感","v":"情感"},{"n":"科幻","v":"科幻"},{"n":"热血","v":"热血"},{"n":"推理","v":"推理"},{"n":"搞笑","v":"搞笑"},{"n":"冒险","v":"冒险"},{"n":"萝莉","v":"萝莉"},{"n":"校园","v":"校园"},{"n":"动作","v":"动作"},{"n":"机战","v":"机战"},{"n":"运动","v":"运动"},{"n":"战争","v":"战争"},{"n":"少年","v":"少年"},{"n":"少女","v":"少女"},{"n":"社会","v":"社会"},{"n":"原创","v":"原创"},{"n":"亲子","v":"亲子"},{"n":"益智","v":"益智"},{"n":"励志","v":"励志"},{"n":"其他","v":"其他"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"国语","v":"国语"},{"n":"英语","v":"英语"},{"n":"粤语","v":"粤语"},{"n":"韩语","v":"韩语"},{"n":"日语","v":"日语"},{"n":"其它","v":"其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"},{"n":"2004","v":"2004"}]}],
+		"3":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"选秀","v":"选秀"},{"n":"情感","v":"情感"},{"n":"访谈","v":"访谈"},{"n":"播报","v":"播报"},{"n":"旅游","v":"旅游"},{"n":"音乐","v":"音乐"},{"n":"美食","v":"美食"},{"n":"纪实","v":"纪实"},{"n":"曲艺","v":"曲艺"},{"n":"生活","v":"生活"},{"n":"游戏互动","v":"游戏互动"},{"n":"财经","v":"财经"},{"n":"求职","v":"求职"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"内地","v":"内地"},{"n":"港台","v":"港台"},{"n":"日韩","v":"日韩"},{"n":"欧美","v":"欧美"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"国语","v":"国语"},{"n":"英语","v":"英语"},{"n":"粤语","v":"粤语"},{"n":"闽南语","v":"闽南语"},{"n":"韩语","v":"韩语"},{"n":"日语","v":"日语"},{"n":"其它","v":"其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"},{"n":"2004","v":"2004"}]}],
+		"1":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"喜剧","v":"喜剧"},{"n":"爱情","v":"爱情"},{"n":"恐怖","v":"恐怖"},{"n":"动作","v":"动作"},{"n":"科幻","v":"科幻"},{"n":"剧情","v":"剧情"},{"n":"战争","v":"战争"},{"n":"警匪","v":"警匪"},{"n":"犯罪","v":"犯罪"},{"n":"武侠","v":"武侠"},{"n":"冒险","v":"冒险"},{"n":"枪战","v":"枪战"},{"n":"恐怖","v":"恐怖"},{"n":"悬疑","v":"悬疑"},{"n":"惊悚","v":"惊悚"},{"n":"青春","v":"青春"},{"n":"文艺","v":"文艺"},{"n":"古装","v":"古装"},{"n":"历史","v":"历史"},{"n":"运动","v":"运动"},{"n":"农村","v":"农村"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"大陆","v":"大陆"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"美国","v":"美国"},{"n":"日本","v":"日本"},{"n":"韩国","v":"韩国"},{"n":"泰国","v":"泰国"},{"n":"印度","v":"印度"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]}],
+		"2":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"古装","v":"古装"},{"n":"战争","v":"战争"},{"n":"青春偶像","v":"青春偶像"},{"n":"喜剧","v":"喜剧"},{"n":"家庭","v":"家庭"},{"n":"犯罪","v":"犯罪"},{"n":"动作","v":"动作"},{"n":"奇幻","v":"奇幻"},{"n":"剧情","v":"剧情"},{"n":"历史","v":"历史"},{"n":"经典","v":"经典"},{"n":"乡村","v":"乡村"},{"n":"情景","v":"情景"},{"n":"商战","v":"商战"},{"n":"网剧","v":"网剧"},{"n":"其他","v":"其他"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"内地","v":"内地"},{"n":"韩国","v":"韩国"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"日本","v":"日本"},{"n":"美国","v":"美国"},{"n":"泰国","v":"泰国"},{"n":"英国","v":"英国"},{"n":"新加坡","v":"新加坡"},{"n":"其他","v":"其他"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"国语","v":"国语"},{"n":"英语","v":"英语"},{"n":"粤语","v":"粤语"},{"n":"闽南语","v":"闽南语"},{"n":"韩语","v":"韩语"},{"n":"日语","v":"日语"},{"n":"其它","v":"其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"},{"n":"2004","v":"2004"}]}]
+	},
+	detailUrl:'/detail?vod_id=fyid',
+	searchUrl: '/search?text=**&pg=fypage',
+	searchable: 2,
+	quickSearch: 0,
+	filterable:1,//是否启用分类筛选,
+	headers:{'User-Agent':'okhttp/4.1.0'},
+	timeout:5000,
+	// 分类筛选 /api.php/app/nav || /xgapp.php/v1/nav || /api.php/v1.vod/types
+	class_name:'新电影4K&新剧4K&好莱坞4K&港台经典4k&少儿动画4K&国剧盛典4K&怀旧TVB&动漫4K&邵氏老电影4K&国产老电影4K&合拍经典4K&明星专辑4K&恐怖片精选4K&动漫&综艺&电影综合&电视剧综合&体育赛事',
+	class_url:'20&21&47&48&50&46&53&58&5&44&51&45&52&4&3&1&2&32',
+	play_parse:true,
+	lazy:`js:
+		let play_Url = '';
+        if (/\\.m3u8|\\.mp4/.test(input)) {
+            input = {
+                jx: 0,
+                url: input,
+                parse: 0
+            }
+		} else if (/,/.test(input) && /url=/.test(input)) {
+			input = input.split('url=');
+			play_Url = input[0].split(',')[0];
+            input = {
+                jx: 0,
+                url: input[1],
+				playUrl: play_Url,
+                parse: 1
+            }
+		} else if (/url=|id=/.test(input)) {
+            input = {
+                jx: 0,
+                url: JSON.parse(request(input)).url,
+                parse: 0
+            }
+        } else if (/youku|iqiyi|v\\.qq\\.com|pptv|sohu|le\\.com|1905\\.com|mgtv|bilibili|ixigua/.test(input)) {
+			play_Url = /bilibili/.test(input) ? 'https://jx.xmflv.com/?url=' : 'https://jx.777jiexi.com/player/?url='; // type0的parse
+			// play_Url = /bilibili/.test(input) ? 'https://jx.xmflv.com/?url=' : 'json:http://pandown.pro/app/kkdy.php?url='; // type1的parse可加'json:'直接解析url (除了蜂蜜的'影视TV'，其它的壳皆可用)
+			input = {
+				jx: 0,
+				url: input,
+				playUrl: play_Url,
+				parse: 1,
+				header: JSON.stringify({
+					'user-agent': 'Mozilla/5.0',
+				}),
+			}
+        } else {
+			input
+		}
+    `,
+	limit:6,
+	// 图片来源:'@Referer=https://api.douban.com/@User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/113.0.0.0%20Safari/537.36',
+	推荐:`js:
+		let d = [];
+		let jsondata = [];
+		let videoList = [];
+		if (/v1\\.vod/.test(HOST)) {
+			if(HOST.endsWith('/')){
+				jsondata = JSON.parse(request(HOST + 'vodPhbAll'));
+			} else {
+				jsondata = JSON.parse(request(HOST + '/vodPhbAll'));
+			}
+			videoList = jsondata.data.list;
+		} else {
+			if(HOST.endsWith('/')){
+				jsondata = JSON.parse(request(HOST + 'index_video'));
+			} else {
+				jsondata = JSON.parse(request(HOST + '/index_video'));
+			}
+			videoList = /xgapp/.test(HOST) ? jsondata.data : jsondata.list;
+		}
+		// log('videoList =========> '+stringify(videoList));
+		videoList.forEach((it,idex) => {
+			let vlist = /v1\\.vod/.test(HOST) ? videoList[idex].vod_list : videoList[idex].vlist ;
+			vlist.forEach(it => {
+				d.push({
+					url:it.vod_id,
+					title:it.vod_name,
+					img:it.vod_pic.startsWith('http') ? it.vod_pic : it.vod_pic.startsWith('//') ? 'https:' + it.vod_pic : it.vod_pic.startsWith('/') ? getHome(HOST) + it.vod_pic : getHome(HOST) + '/' + it.vod_pic,
+					desc:it.vod_remarks,
+				});
+			});
+		});
+		setResult(d);
+	`,
+	一级:`js:
+		let d = [];
+		let jsondata = [];
+		let videoList = [];
+		if (/v1\\.vod/.test(HOST)) {
+			input = input.replace('video','v1.vod').replace('tid','type').replace('pg=','page=');
+			jsondata = JSON.parse(request(input));
+			videoList = jsondata.data.list;
+		} else {
+			input = HOST + '/'+ input.split('/')[4];
+			jsondata = JSON.parse(request(input));
+			videoList = jsondata.list || jsondata.data;
+		}
+		// log('videoList =========> '+stringify(videoList));
+		videoList.forEach(it => {
+			d.push({
+				url:it.vod_id,
+				title:it.vod_name,
+				img:it.vod_pic.startsWith('http') ? it.vod_pic : it.vod_pic.startsWith('//') ? 'https:' + it.vod_pic : it.vod_pic.startsWith('/') ? getHome(HOST) + it.vod_pic : getHome(HOST) + '/' + it.vod_pic,
+				desc:it.vod_remarks,
+			});
+		});
+		setResult(d);
+	`,
+	二级:`js: 
+		if (/v1\\.vod/.test(HOST)) {
+			input = HOST + '/'+ input.split('/')[3];
+		} else {
+			input = HOST + '/'+ input.split('/')[3].replace('detail','video_detail').replace('vod_id','id');
+		}
+		try {
+			let html = request(input);
+			html = JSON.parse(html);
+			let node = /xgapp/.test(HOST) ? html.data.vod_info : html.data;
+			VOD = {
+				vod_id: node.vod_id,
+				vod_name: node.vod_name,
+				vod_pic: node.vod_pic,
+				type_name: node.vod_class,
+				vod_year: node.vod_year,
+				vod_area: node.vod_area,
+				vod_remarks: node.vod_remarks,
+				vod_actor: node.vod_actor,
+				vod_director: node.vod_director,
+				vod_content: node.vod_content.strip()
+			};
+			if (typeof play_url === 'undefined') {
+				var play_url = ''
+			}
+			let episodes = /v1\\.vod/.test(HOST)?node.vod_play_list:node.vod_url_with_player;
+			if (episodes != '') {
+				let playMap = {};
+				episodes.forEach(ep => {
+					let from = [];
+					if (/v1\\.vod/.test(HOST)) {
+						from = ep.player_info.from||ep.player_info.show||ep.from||ep.show;
+					} else {
+						from = ep.code||ep.name;
+					}
+					if (!playMap.hasOwnProperty(from)) {
+						playMap[from] = []
+					}
+					let parse_api = '';
+					if (/v1\\.vod/.test(HOST)) {
+						parse_api = ep.player_info.parse != null ? ep.player_info.parse : ep.player_info.parse2;
+						// parse_api = /,/.test(parse_api) ? parse_api.split(',')[1] : parse_api;
+					} else {
+						parse_api = ep.parse_api;
+					}
+					log('parse_api =========> '+parse_api);
+					if (parse_api != null && !/\\.m3u8|\\.mp4/.test(ep.url)) {
+						parse_api = parse_api.replaceAll('..','.') ;
+						ep.url = ep.url.replaceAll('$','$'+parse_api);
+					}
+					playMap[from].push(ep.url)
+				});
+				let playFrom = [];
+				let playList = [];
+				Object.keys(playMap).forEach(key => {
+					playFrom.push(key);
+					playList.push(playMap[key])
+				});
+				VOD.vod_play_from = playFrom.join('$$$');
+				VOD.vod_play_url = playList.join('$$$');
+			} else {
+				VOD.vod_play_from = node.vod_play_from;
+				VOD.vod_play_url = node.vod_play_url;
+			}
+		} catch (e) {
+			log("获取二级详情页发生错误:" + e.message);
+		}
+	`,
+	搜索:`js:
+		let d = [];
+		let jsondata = [];
+		let videoList = [];
+		if (/v1\\.vod/.test(HOST)) {
+			input = (HOST + '/'+ input.split('/')[3]).replace('/search','').replace('text=','wd=').replace('pg=','page=');
+			jsondata = JSON.parse(request(input));
+			videoList = jsondata.data.list;
+		} else {
+			input = HOST + '/'+ input.split('/')[3]
+			jsondata = JSON.parse(request(input));
+			videoList = jsondata.list || jsondata.data;
+		}
+		// log('videoList =========> '+stringify(videoList));
+		videoList.forEach(it => {
+			d.push({
+				url:it.vod_id,
+				title:it.vod_name,
+				img:it.vod_pic.startsWith('http') ? it.vod_pic : it.vod_pic.startsWith('//') ? 'https:' + it.vod_pic : it.vod_pic.startsWith('/') ? getHome(HOST) + it.vod_pic : getHome(HOST) + '/' + it.vod_pic,
+				desc:it.vod_remarks,
+			});
+		});
+		setResult(d);
+	`,
+}

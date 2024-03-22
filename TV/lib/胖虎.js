@@ -1,162 +1,38 @@
-<!doctype html>
-<html>
-        <head>
-                    <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-<script type="text/javascript">
-    if (window.location.protocol === 'https:') {
-        let meta = document.createElement('meta');
-        meta.httpEquiv = "Content-Security-Policy";
-        meta.content = "upgrade-insecure-requests";
-        document.getElementsByTagName('head')[0].appendChild(meta);
-    }
-</script>
-<title>AtomGit_开放原子开源基金会代码托管平台</title>
-<meta name="keywords" content="开源项目源代码托管，开源软件项目，开源硬件项目，开源芯片项目，AtomGit，Git">
-<meta name="description" content="AtomGit 是开放原子开源基金会旗下的具有自主核心技术的开源代码托管平台，为开源软件、开源硬件、开源芯片等各类开源项目提供基于 Git 协议的源码托管服务，推动创新资源共建共享。">
-<meta name="viewport" content="width=1280, maximum-scale=2.0, user-scalable=yes"/>
-
-<link rel="shortcut icon" href="/favicon.ico" type="image/png">
-<link rel="dns-prefetch" href="//g.alicdn.com">
-
-<style>
-    :root {
-        --highlight-brand: #f2fbff;
-        --bright-brand: #ccecff;
-        --border-brand: #87d2ff;
-        --primary-brand: #1b9aee;
-        --hover-brand: #0171c2;
-        --click-brand: #004f8a;
-        --heavy-brand: #002e52;
-        --color-brand1-10: #000F33 !important;
-        --color-brand1-9: #001E66 !important;
-        --color-brand1-8: #002C99 !important;
-        --color-brand1-7: #0034B3 !important;
-        --color-brand1-6: #215AE5 !important;
-        --color-brand1-5: #4077FF !important;
-        --color-brand1-4: #6699FF !important;
-        --color-brand1-3: #BFD4FF !important;
-        --color-brand1-2: #D9E5FF !important;
-        --color-brand1-1: #F0F6FF !important;
-    }
-</style>
-<script src=https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/public/i18n/0.0.5/codeup-assets_develop.json?timestamp=1711094905354"></script>
-
-<link rel="stylesheet" href="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/public/yunxiao-fe/teamix-ui/1.5.3/style/style/yunxiao-v5.min.css" />
-<link rel="stylesheet" href="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/public/ais-fed/navigation-sdk/2.2.69/next-indexWithoutTeamixUI.css" />
-        <link rel="stylesheet" href="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/ais-fed/code-assets/5.0.43-o/index.css?timestamp=1711094905354">
-                </head>
-    <body>
-                    
-<script src="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/lib/1.0.0/yunxiao-libs.min.js" nonce=""></script>
-
-<div id="container"></div>
-
-<script src="https://openatom.cn/trivial-services/stats/index/entry?id=1&auto=no"></script>
-<script src="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/public/yunxiao-fe/teamix-ui/1.5.3/dist/dist/teamix-ui.min.js" nonce=""></script>
-
-<script src="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/public/ais-fed/navigation-sdk/2.2.69/next-indexWithoutTeamixUI.js" nonce=""></script>
-<script type="text/javascript" nonce="">
-    window.GlobalSetting = {};
-
-    window.config = {
-                    isHomePage: true,
-                appId: '5d76215aa338520001c9e789',
-        orgId: '65d40caa1e41b5e2d5ed3ea7',
-        accessToken: '',
-        needLanguageSwitcher: false,
-        needAccountSetting: false,
-        needUserProfile: true,
-        needUserProfileCodeup: true,
-        needLogin: true,
-        hideAppStore: false,
-        hideOrgAdmin: true,
-        lang: 'zh_CN',
-        env: 'opensource'
-    };
-
-    window.UILessConfig = window.config;
-                
-    // 应用自己使用数据
-    window.FORCE = {
-        csrfTokenName: '',
-        csrfToken: '',
-        tenant: 'OPENSOURCE',
-        subRoute: '',
-        env: 'PRODUCTION',
-        assetsVersion: '5.0.0',
-        user: {
-            loginAccount:'',//账号登录名
-            nickname: '',//账号昵称
-            id: '',//账号唯一ID
-            avatar: '',
-            email:  'default_anonymous_user@default_anonymous_user' ,
-            codeUserId: '',
-        },
-        organization: {
-            id: '36219',
-            namespace_id: '37546',
-            organization_id: '65d40caa1e41b5e2d5ed3ea7',
-            path: 'tvkj',
-            user_role: 'GUEST',
-            repo_display_level: '0,20',
-            repo_visibility_level: '0,20',
-            repo_admin_access_visibility_level: '0,20',
-            repo_default_clone_type:'1',
-            is_recycler_enable:'false',
-            backup_enabled:'false',
-            i18n_support:'false',
-            commits_export_support:'false',
-            new_code_review_gray_flag:  true
-        },
-        locale: 'zh_CN',
-        remoteIP: '211.158.53.203',
-        realIpEnable: 'true',
-        recycleDays: '15',
-        pathResource: {},
-        resourceSubject: {},
-        codeReviewDetail: {},
-        assetsName: 'error'
-    };
-
-
-</script>
-
-<script type="text/javascript" nonce="">
-    window.FORCE.pathResource = {
-        type: '',
-        id: '',
-        fullPath: '',
-        fullName: '',
-        role:'',
-        parentId: '',
-        parentType: '',
-        isEmpty: '',
-        defaultBranch: '',
-        isExist: '',
-        isArchive: '',
-        visibilityValue: '',
-        isStar: '',
-        repoSize: '',
-        branchCount: '',
-        commitCount: '',
-        mergeRequestCount: '',
-        tagCount: '',
-        repoLimitSize: ''
-    };
-</script>
-<script type="text/javascript" nonce="">
-
-    window.ERROR = {};
-    window.ERROR.errorMessage = '查询文件内容失败';
-    window.ERROR.errorCode = 'SYSTEM_ERROR';
-    window.ERROR.errorAction = '请稍后重试';
-    window.ERROR.errorTraceId = '';
-
-</script>
-
-
-
-        <script src="https://atomgit-opensource.oss-cn-beijing.aliyuncs.com/ais-fed/code-assets/5.0.43-o/index.js?timestamp=1711094905354" nonce=""></script>
-                </body>
-    </html>
+// 永久发布页 https://my.cdnkan.top
+// 搜索数字验证(解决)
+muban.mxpro.二级.desc = ';;;.module-info-item:eq(2) .module-info-item-content&&Text;.module-info-item:eq(1) .module-info-item-content&&Text';
+muban.mxpro.二级.tabs = '#y-playList .module-tab-item';
+var rule = {
+	title:'胖虎',
+	模板:'mxpro',
+	// host:'http://www.panghuys.com',
+	host:'https://my.cdnkan.top',
+	// hostJs:'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});let src=jsp.pdfh(html,"li:eq(0)&&a&&href");print(src);HOST=src',
+	hostJs:'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});let src=jsp.pdfh(html,"li:eq(1)&&a&&href");print(src);HOST=src',
+	url:'/vodshow/fyclassfyfilter.html',
+	filterable:1,//是否启用分类筛选,
+	filter_url:'{{fl.area}}{{fl.by or "/by/time"}}{{fl.class}}{{fl.lang}}{{fl.letter}}/page/fypage{{fl.year}}',
+	filter: {
+		"1":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"动作","v":"/class/动作"},{"n":"喜剧","v":"/class/喜剧"},{"n":"爱情","v":"/class/爱情"},{"n":"科幻","v":"/class/科幻"},{"n":"剧情","v":"/class/剧情"},{"n":"悬疑","v":"/class/悬疑"},{"n":"惊悚","v":"/class/惊悚"},{"n":"恐怖","v":"/class/恐怖"},{"n":"犯罪","v":"/class/犯罪"},{"n":"谍战","v":"/class/谍战"},{"n":"冒险","v":"/class/冒险"},{"n":"奇幻","v":"/class/奇幻"},{"n":"灾难","v":"/class/灾难"},{"n":"战争","v":"/class/战争"},{"n":"动画","v":"/class/动画"},{"n":"歌舞","v":"/class/歌舞"},{"n":"历史","v":"/class/历史"},{"n":"传记","v":"/class/传记"},{"n":"其他","v":"/class/其他"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"/area/中国大陆"},{"n":"中国香港","v":"/area/中国香港"},{"n":"中国台湾","v":"/area/中国台湾"},{"n":"美国","v":"/area/美国"},{"n":"法国","v":"/area/法国"},{"n":"英国","v":"/area/英国"},{"n":"日本","v":"/area/日本"},{"n":"韩国","v":"/area/韩国"},{"n":"德国","v":"/area/德国"},{"n":"泰国","v":"/area/泰国"},{"n":"印度","v":"/area/印度"},{"n":"意大利","v":"/area/意大利"},{"n":"西班牙","v":"/area/西班牙"},{"n":"加拿大","v":"/area/加拿大"},{"n":"其他","v":"/area/其他"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"普通话","v":"/lang/普通话"},{"n":"英语","v":"/lang/英语"},{"n":"粤语","v":"/lang/粤语"},{"n":"闽南语","v":"/lang/闽南语"},{"n":"韩语","v":"/lang/韩语"},{"n":"日语","v":"/lang/日语"},{"n":"法语","v":"/lang/法语"},{"n":"德语","v":"/lang/德语"},{"n":"其它","v":"/lang/其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"/year/2023"},{"n":"2022","v":"/year/2022"},{"n":"2021","v":"/year/2021"},{"n":"2020","v":"/year/2020"},{"n":"2019","v":"/year/2019"},{"n":"2018","v":"/year/2018"},{"n":"2017","v":"/year/2017"},{"n":"2016","v":"/year/2016"},{"n":"2015","v":"/year/2015"},{"n":"2014","v":"/year/2014"},{"n":"2013","v":"/year/2013"},{"n":"2012","v":"/year/2012"},{"n":"2011","v":"/year/2011"},{"n":"2010","v":"/year/2010"},{"n":"2009","v":"/year/2009"},{"n":"2008","v":"/year/2008"},{"n":"2007","v":"/year/2007"},{"n":"2006","v":"/year/2006"},{"n":"2005","v":"/year/2005"},{"n":"2004","v":"/year/2004"},{"n":"2003","v":"/year/2003"},{"n":"2002","v":"/year/2002"},{"n":"2001","v":"/year/2001"},{"n":"2000","v":"/year/2000"}]},{"key":"letter","name":"字母","value":[{"n":"全部","v":""},{"n":"A","v":"/letter/A"},{"n":"B","v":"/letter/B"},{"n":"C","v":"/letter/C"},{"n":"D","v":"/letter/D"},{"n":"E","v":"/letter/E"},{"n":"F","v":"/letter/F"},{"n":"G","v":"/letter/G"},{"n":"H","v":"/letter/H"},{"n":"I","v":"/letter/I"},{"n":"J","v":"/letter/J"},{"n":"K","v":"/letter/K"},{"n":"L","v":"/letter/L"},{"n":"M","v":"/letter/M"},{"n":"N","v":"/letter/N"},{"n":"O","v":"/letter/O"},{"n":"P","v":"/letter/P"},{"n":"Q","v":"/letter/Q"},{"n":"R","v":"/letter/R"},{"n":"S","v":"/letter/S"},{"n":"T","v":"/letter/T"},{"n":"U","v":"/letter/U"},{"n":"V","v":"/letter/V"},{"n":"W","v":"/letter/W"},{"n":"X","v":"/letter/X"},{"n":"Y","v":"/letter/Y"},{"n":"Z","v":"/letter/Z"},{"n":"0-9","v":"/letter/0-9"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"/by/time"},{"n":"人气","v":"/by/hits"},{"n":"评分","v":"/by/score"}]}],
+		"2":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"武侠","v":"/class/武侠"},{"n":"喜剧","v":"/class/喜剧"},{"n":"爱情","v":"/class/爱情"},{"n":"剧情","v":"/class/剧情"},{"n":"青春","v":"/class/青春"},{"n":"悬疑","v":"/class/悬疑"},{"n":"科幻","v":"/class/科幻"},{"n":"军事","v":"/class/军事"},{"n":"警匪","v":"/class/警匪"},{"n":"谍战","v":"/class/谍战"},{"n":"奇幻","v":"/class/奇幻"},{"n":"偶像","v":"/class/偶像"},{"n":"年代","v":"/class/年代"},{"n":"乡村","v":"/class/乡村"},{"n":"都市","v":"/class/都市"},{"n":"家庭","v":"/class/家庭"},{"n":"古装","v":"/class/古装"},{"n":"历史","v":"/class/历史"},{"n":"神话","v":"/class/神话"},{"n":"其他","v":"/class/其他"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"/area/中国大陆"},{"n":"中国香港","v":"/area/中国香港"},{"n":"中国台湾","v":"/area/中国台湾"},{"n":"美国","v":"/area/美国"},{"n":"韩国","v":"/area/韩国"},{"n":"日本","v":"/area/日本"},{"n":"法国","v":"/area/法国"},{"n":"英国","v":"/area/英国"},{"n":"德国","v":"/area/德国"},{"n":"泰国","v":"/area/泰国"},{"n":"印度","v":"/area/印度"},{"n":"其他","v":"/area/其他"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"普通话","v":"/lang/普通话"},{"n":"英语","v":"/lang/英语"},{"n":"粤语","v":"/lang/粤语"},{"n":"闽南语","v":"/lang/闽南语"},{"n":"韩语","v":"/lang/韩语"},{"n":"日语","v":"/lang/日语"},{"n":"法语","v":"/lang/法语"},{"n":"德语","v":"/lang/德语"},{"n":"其它","v":"/lang/其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"/year/2023"},{"n":"2022","v":"/year/2022"},{"n":"2021","v":"/year/2021"},{"n":"2020","v":"/year/2020"},{"n":"2019","v":"/year/2019"},{"n":"2018","v":"/year/2018"},{"n":"2017","v":"/year/2017"},{"n":"2016","v":"/year/2016"},{"n":"2015","v":"/year/2015"},{"n":"2014","v":"/year/2014"},{"n":"2013","v":"/year/2013"},{"n":"2012","v":"/year/2012"},{"n":"2011","v":"/year/2011"},{"n":"2010","v":"/year/2010"},{"n":"2009","v":"/year/2009"},{"n":"2008","v":"/year/2008"},{"n":"2007","v":"/year/2007"},{"n":"2006","v":"/year/2006"},{"n":"2005","v":"/year/2005"},{"n":"2004","v":"/year/2004"},{"n":"2003","v":"/year/2003"},{"n":"2002","v":"/year/2002"},{"n":"2001","v":"/year/2001"},{"n":"2000","v":"/year/2000"}]},{"key":"letter","name":"字母","value":[{"n":"全部","v":""},{"n":"A","v":"/letter/A"},{"n":"B","v":"/letter/B"},{"n":"C","v":"/letter/C"},{"n":"D","v":"/letter/D"},{"n":"E","v":"/letter/E"},{"n":"F","v":"/letter/F"},{"n":"G","v":"/letter/G"},{"n":"H","v":"/letter/H"},{"n":"I","v":"/letter/I"},{"n":"J","v":"/letter/J"},{"n":"K","v":"/letter/K"},{"n":"L","v":"/letter/L"},{"n":"M","v":"/letter/M"},{"n":"N","v":"/letter/N"},{"n":"O","v":"/letter/O"},{"n":"P","v":"/letter/P"},{"n":"Q","v":"/letter/Q"},{"n":"R","v":"/letter/R"},{"n":"S","v":"/letter/S"},{"n":"T","v":"/letter/T"},{"n":"U","v":"/letter/U"},{"n":"V","v":"/letter/V"},{"n":"W","v":"/letter/W"},{"n":"X","v":"/letter/X"},{"n":"Y","v":"/letter/Y"},{"n":"Z","v":"/letter/Z"},{"n":"0-9","v":"/letter/0-9"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"/by/time"},{"n":"人气","v":"/by/hits"},{"n":"评分","v":"/by/score"}]}],
+		"3":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"脱口秀","v":"/class/脱口秀"},{"n":"真人秀","v":"/class/真人秀"},{"n":"搞笑","v":"/class/搞笑"},{"n":"访谈","v":"/class/访谈"},{"n":"生活","v":"/class/生活"},{"n":"晚会","v":"/class/晚会"},{"n":"美食","v":"/class/美食"},{"n":"游戏","v":"/class/游戏"},{"n":"亲子","v":"/class/亲子"},{"n":"旅游","v":"/class/旅游"},{"n":"文化","v":"/class/文化"},{"n":"体育","v":"/class/体育"},{"n":"时尚","v":"/class/时尚"},{"n":"纪实","v":"/class/纪实"},{"n":"益智","v":"/class/益智"},{"n":"演艺","v":"/class/演艺"},{"n":"歌舞","v":"/class/歌舞"},{"n":"音乐","v":"/class/音乐"},{"n":"播报","v":"/class/播报"},{"n":"其他","v":"/class/其他"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"/area/中国大陆"},{"n":"中国香港","v":"/area/中国香港"},{"n":"中国台湾","v":"/area/中国台湾"},{"n":"美国","v":"/area/美国"},{"n":"韩国","v":"/area/韩国"},{"n":"日本","v":"/area/日本"},{"n":"法国","v":"/area/法国"},{"n":"英国","v":"/area/英国"},{"n":"德国","v":"/area/德国"},{"n":"泰国","v":"/area/泰国"},{"n":"印度","v":"/area/印度"},{"n":"其他","v":"/area/其他"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"普通话","v":"/lang/普通话"},{"n":"英语","v":"/lang/英语"},{"n":"粤语","v":"/lang/粤语"},{"n":"闽南语","v":"/lang/闽南语"},{"n":"韩语","v":"/lang/韩语"},{"n":"日语","v":"/lang/日语"},{"n":"其它","v":"/lang/其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"/year/2023"},{"n":"2022","v":"/year/2022"},{"n":"2021","v":"/year/2021"},{"n":"2020","v":"/year/2020"},{"n":"2019","v":"/year/2019"},{"n":"2018","v":"/year/2018"},{"n":"2017","v":"/year/2017"},{"n":"2016","v":"/year/2016"},{"n":"2015","v":"/year/2015"},{"n":"2014","v":"/year/2014"},{"n":"2013","v":"/year/2013"},{"n":"2012","v":"/year/2012"},{"n":"2011","v":"/year/2011"},{"n":"2010","v":"/year/2010"},{"n":"2009","v":"/year/2009"},{"n":"2008","v":"/year/2008"},{"n":"2007","v":"/year/2007"},{"n":"2006","v":"/year/2006"},{"n":"2005","v":"/year/2005"},{"n":"2004","v":"/year/2004"},{"n":"2003","v":"/year/2003"},{"n":"2002","v":"/year/2002"},{"n":"2001","v":"/year/2001"},{"n":"2000","v":"/year/2000"}]},{"key":"letter","name":"字母","value":[{"n":"全部","v":""},{"n":"A","v":"/letter/A"},{"n":"B","v":"/letter/B"},{"n":"C","v":"/letter/C"},{"n":"D","v":"/letter/D"},{"n":"E","v":"/letter/E"},{"n":"F","v":"/letter/F"},{"n":"G","v":"/letter/G"},{"n":"H","v":"/letter/H"},{"n":"I","v":"/letter/I"},{"n":"J","v":"/letter/J"},{"n":"K","v":"/letter/K"},{"n":"L","v":"/letter/L"},{"n":"M","v":"/letter/M"},{"n":"N","v":"/letter/N"},{"n":"O","v":"/letter/O"},{"n":"P","v":"/letter/P"},{"n":"Q","v":"/letter/Q"},{"n":"R","v":"/letter/R"},{"n":"S","v":"/letter/S"},{"n":"T","v":"/letter/T"},{"n":"U","v":"/letter/U"},{"n":"V","v":"/letter/V"},{"n":"W","v":"/letter/W"},{"n":"X","v":"/letter/X"},{"n":"Y","v":"/letter/Y"},{"n":"Z","v":"/letter/Z"},{"n":"0-9","v":"/letter/0-9"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"/by/time"},{"n":"人气","v":"/by/hits"},{"n":"评分","v":"/by/score"}]}],
+		"4":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"热血","v":"/class/热血"},{"n":"格斗","v":"/class/格斗"},{"n":"恋爱","v":"/class/恋爱"},{"n":"少女","v":"/class/少女"},{"n":"校园","v":"/class/校园"},{"n":"搞笑","v":"/class/搞笑"},{"n":"神魔","v":"/class/神魔"},{"n":"机战","v":"/class/机战"},{"n":"科幻","v":"/class/科幻"},{"n":"真人","v":"/class/真人"},{"n":"青春","v":"/class/青春"},{"n":"魔法","v":"/class/魔法"},{"n":"神话","v":"/class/神话"},{"n":"冒险","v":"/class/冒险"},{"n":"运动","v":"/class/运动"},{"n":"竞技","v":"/class/竞技"},{"n":"童话","v":"/class/童话"},{"n":"亲子","v":"/class/亲子"},{"n":"教育","v":"/class/教育"},{"n":"励志","v":"/class/励志"},{"n":"剧情","v":"/class/剧情"},{"n":"其他","v":"/class/其他"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"/area/中国大陆"},{"n":"日本","v":"/area/日本"},{"n":"美国","v":"/area/美国"},{"n":"其他","v":"/area/其他"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"普通话","v":"/lang/普通话"},{"n":"英语","v":"/lang/英语"},{"n":"粤语","v":"/lang/粤语"},{"n":"闽南语","v":"/lang/闽南语"},{"n":"韩语","v":"/lang/韩语"},{"n":"日语","v":"/lang/日语"},{"n":"其它","v":"/lang/其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"/year/2023"},{"n":"2022","v":"/year/2022"},{"n":"2021","v":"/year/2021"},{"n":"2020","v":"/year/2020"},{"n":"2019","v":"/year/2019"},{"n":"2018","v":"/year/2018"},{"n":"2017","v":"/year/2017"},{"n":"2016","v":"/year/2016"},{"n":"2015","v":"/year/2015"},{"n":"2014","v":"/year/2014"},{"n":"2013","v":"/year/2013"},{"n":"2012","v":"/year/2012"},{"n":"2011","v":"/year/2011"},{"n":"2010","v":"/year/2010"},{"n":"2009","v":"/year/2009"},{"n":"2008","v":"/year/2008"},{"n":"2007","v":"/year/2007"},{"n":"2006","v":"/year/2006"},{"n":"2005","v":"/year/2005"},{"n":"2004","v":"/year/2004"},{"n":"2003","v":"/year/2003"},{"n":"2002","v":"/year/2002"},{"n":"2001","v":"/year/2001"},{"n":"2000","v":"/year/2000"}]},{"key":"letter","name":"字母","value":[{"n":"全部","v":""},{"n":"A","v":"/letter/A"},{"n":"B","v":"/letter/B"},{"n":"C","v":"/letter/C"},{"n":"D","v":"/letter/D"},{"n":"E","v":"/letter/E"},{"n":"F","v":"/letter/F"},{"n":"G","v":"/letter/G"},{"n":"H","v":"/letter/H"},{"n":"I","v":"/letter/I"},{"n":"J","v":"/letter/J"},{"n":"K","v":"/letter/K"},{"n":"L","v":"/letter/L"},{"n":"M","v":"/letter/M"},{"n":"N","v":"/letter/N"},{"n":"O","v":"/letter/O"},{"n":"P","v":"/letter/P"},{"n":"Q","v":"/letter/Q"},{"n":"R","v":"/letter/R"},{"n":"S","v":"/letter/S"},{"n":"T","v":"/letter/T"},{"n":"U","v":"/letter/U"},{"n":"V","v":"/letter/V"},{"n":"W","v":"/letter/W"},{"n":"X","v":"/letter/X"},{"n":"Y","v":"/letter/Y"},{"n":"Z","v":"/letter/Z"},{"n":"0-9","v":"/letter/0-9"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"/by/time"},{"n":"人气","v":"/by/hits"},{"n":"评分","v":"/by/score"}]}]
+	},
+	class_parse:'.navbar-items li:gt(1):lt(6);a&&Text;a&&href;/(\\d+).html',
+	searchUrl:'/phsch/page/fypage/wd/**.html',
+	searchable: 1,
+	lazy:`js:
+		var html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
+		var url = html.url;
+		if (html.encrypt == '1') {
+			url = unescape(url)
+		} else if (html.encrypt == '2') {
+			url = unescape(base64Decode(url))
+		}
+		if (/m3u8|mp4/.test(url)) {
+			input = url
+		} else {
+			input
+		}
+	`,
+}
