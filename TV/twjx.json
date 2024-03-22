@@ -29,7 +29,7 @@
       "searchable": 1,
       "filterable": 0,
       "changeable": 0,
-      "jar": "./alibaba.jar"
+      "jar": "./lib/alibaba.jar"
     },
     {
       "key": "玩偶哥哥",
