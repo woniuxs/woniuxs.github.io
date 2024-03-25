@@ -1454,7 +1454,7 @@ CCTV16,http://39.134.24.162/dbiptv.sn.chinamobile.com/PLTV/88888890/224/32212269
 宁夏卫视,https://hls.ningxiahuangheyun.com/live/nxws1M.m3u8
 新疆卫视,http://jscbn.tx-cdn.gitv.tv/gitv_escape/G_XINJIANG/G_XINJIANG.m3u8
 青海卫视,http://jscbn.tx-cdn.gitv.tv/gitv_escape/G_QINGHAI/G_QINGHAI.m3u8
-天微科技,https://gcalic.v.myalicdn.com/gc/ylxs11_1/index.m3u8
+蜗牛科技,https://gcalic.v.myalicdn.com/gc/ylxs11_1/index.m3u8
 青海卫视,http://stream.qhbtv.com/qhws/sd/live.m3u8
 西藏卫视,http://jscbn.tx-cdn.gitv.tv/gitv_escape/G_XIZANG/G_XIZANG.m3u8
 延边卫视,http://jscbn.tx-cdn.gitv.tv/gitv_escape/G_YANBIAN/G_YANBIAN.m3u8
