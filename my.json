@@ -1,0 +1,24 @@
+{
+  "urls": [
+    {
+      "name": "👿饭太硬",
+      "url": "https://mirror.ghproxy.com/raw.githubusercontent.com/shichuanenhui/TvBox/main/fty.json"
+    },
+    {
+      "name": "🍚饭太硬",
+      "url": "http://www.饭太硬.com/tv/"
+    },
+    {
+      "name": "✍️码点",
+      "url": "https://mirror.ghproxy.com/raw.githubusercontent.com/shichuanenhui/TvBox/main/mdxgh/api.json"
+    },
+    {
+      "name": "☃️PG",
+      "url": "https://mirror.ghproxy.com/raw.githubusercontent.com/aaaafeng123/PG/main/jsm.json"
+    },
+    {
+      "name": "👑潇洒仓",
+      "url": "https://github.moeyy.xyz/https://raw.githubusercontent.com/PizazzGY/TVBox/main/api.json"
+    }
+  ]
+}
